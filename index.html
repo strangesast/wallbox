@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title></title><style type="text/css">body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body > .title {
+  height: 200px;
+  text-transform: uppercase;
+  font-family: sans;
+}
+section > .title {
+  font-size: 16px;
+  margin: 8px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans;
+  letter-spacing: 10px;
+  color: grey;
+}
+.characters {
+  display: grid;
+  grid-gap: 8px;
+  margin-bottom: 70px;
+}
+.letters {
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(2, 80px);
+}
+.numbers {
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: 0px 80px;
+}
+.volume {
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: 0px 60px;
+}
+.characters > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans;
+  font-weight: bold;
+  font-size: 40px;
+  background: white;
+  box-sizing: border-box;
+  height: 80px;
+  width: 60px;
+  position: relative;
+  #border: 5px solid grey;
+}
+.characters > span:after,
+.characters > span:before {
+  content: '';
+  background: grey;
+  position: absolute;
+}
+.characters > span:after {
+  width: 100%;
+  height: 16px;
+  left: 8px;
+  bottom: 0;
+  transform: translatey(100%) skewx(45deg);
+}
+.characters > span:before {
+  width: 16px;
+  height: 100%;
+  right: 0;
+  transform: translatex(100%) skewy(45deg);
+  top: 8px;
+}
+.volume > span {
+  width: 80px;
+  height: 60px;
+  font-size: 20px;
+}
+.characters > span {
+  user-select: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.characters > span:hover {
+  cursor: pointer;
+  transform: translate(5%, 5%);
+  background: lightgrey;
+}
+.characters > span:active {
+  transform: translate(8%, 8%);
+}
+</style></head><body><h1 class="title">Seeburg Consolette</h1><section><div class="title">Volume</div><div class="characters volume"><span>LOW</span><span>MED</span><span>HIGH</span></div></section><section><div class="characters letters"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span></div></section><section><div class="characters numbers"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div></section></body></html>
