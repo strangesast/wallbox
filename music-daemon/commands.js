@@ -1,481 +1,748 @@
+const EXAMPLE_SONGID = '';
+const EXAMPLE_SONGID2 = '';
 module.exports = {
   'clearerror': {
-    parser: /file/,
+    command: () => `clearerror\n`,
+    testInputs: [
+      [],
+    ],
     type: 'status',
     responseType: 'string',
   },
   'currentsong': {
-    parser: /file/,
+    command: () => `currentsong\n`,
+    testInputs: [
+      [],
+    ],
     type: 'status',
     responseType: 'string',
   },
   'idle': {
-    parser: /file/,
+    command: subsystems => `idle ${subsystems.join(' ')}\n`,
+    testInputs: [
+      ['mixer'],
+    ],
     type: 'status',
     responseType: 'string',
   },
   'status': {
-    parser: /file/,
+    command: `status\n`,
+    testInputs: [
+      [],
+    ],
     type: 'status',
     responseType: 'string',
   },
   'stats': {
-    parser: /file/,
+    command: `stats\n`,
+    testInputs: [
+      [],
+    ],
     type: 'status',
     responseType: 'string',
   },
   'consume': {
-    parser: /file/,
+    command: state => `consume ${state}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'crossfade': {
-    parser: /file/,
+    command: seconds => `crossfade ${seconds}\n`,
+    testInputs: [
+      [1],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'mixrampdb': {
-    parser: /file/,
+    command: decibels => `mixrampdb ${decibels}\n`,
+    testInputs: [
+      [-17],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'mixrampdelay': {
-    parser: /file/,
+    command: seconds => `mixrampdelay ${seconds}\n`,
+    testInputs: [
+      [2],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'random': {
-    parser: /file/,
+    command: state => `random ${state}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'repeat': {
-    parser: /file/,
+    command: state => `repeat ${state}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackOption',
   },
   'setvol': {
-    parser: /file/,
+    command: vol => `setvol ${vol}\n`,
+    testInputs: [
+      [100],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'single': {
-    parser: /file/,
+    command: state => `single ${state}\n`,
+    testInputs: [
+      [1],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'replay_gain_mode': {
-    parser: /file/,
+    command: mode => `replay_gain_mode ${mode}\n`,
+    testInputs: [
+      ['track'],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'replay_gain_status': {
-    parser: /file/,
+    command: `replay_gain_status\n`,
+    testInputs: [
+      [],
+    ],
     type: 'playbackOption',
     responseType: 'string',
   },
   'volume': {
-    parser: /file/,
+    command: change => `volume ${change}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackOption',
     responseType: 'string',
     deprecated: true,
   },
   'next': {
-    parser: /file/,
+    command: `next\n`,
+    testInputs: [
+      [],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'pause': {
-    parser: /file/,
+    command: pause => `pause ${pause}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'play': {
-    parser: /file/,
+    command: songpos => `play ${songpos}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'playid': {
-    parser: /file/,
+    command: songid => `playid ${songid}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'previous': {
-    parser: /file/,
+    command: `previous\n`,
+    testInputs: [
+      [],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'seek': {
-    parser: /file/,
+    command: (songpos, time) => `seek ${songpos} ${time}\n`,
+    testInputs: [
+      [0, 0.1],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'seekid': {
-    parser: /file/,
+    command: (songid, time) => `seekid ${songpos} ${time}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID, 0.1],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'seekcur': {
-    parser: /file/,
+    command: time => `seekcur ${time}\n`,
+    testInputs: [
+      [0.01],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'stop': {
-    parser: /file/,
+    command: `stop\n`,
+    testInputs: [
+      [],
+    ],
     type: 'playbackControl',
     responseType: 'string',
   },
   'add': {
-    parser: /file/,
+    command: uri => `add ${uri}\n`,
+    testInputs: [
+      [EXAMPLE_URI]
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'addid': {
-    parser: /file/,
+    command: (uri, position) => `addid ${uri} ${position}\n`,
+    testInputs: [
+      [EXAMPLE_URI, 0],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'clear': {
-    parser: /file/,
+    command: `clear\n`,
+    testInputs: [
+      [],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'delete': {
-    parser: /file/,
+    command: (pos) => `delete ${Array.isArray(pos) ? fmtRange(pos) : pos}\n`,
+    testInputs: [
+      [0],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'deleteid': {
-    parser: /file/,
+    command: songid => `deleteid ${songid}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'move': {
-    parser: /file/,
+    command: (from, to) => `${Array.isArray(from) ? fmtRange(from) : from} ${to}\n`,
+    testInputs: [
+      [0, 1],
+      [[0, 1], 2],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'moveid': {
-    parser: /file/,
+    command: (from, to) => `moveid ${from} ${to}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID, 2],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'playlist': {
-    parser: /file/,
+    command: `playlist\n`,
+    testInputs: [
+      [],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'playlistfind': {
-    parser: /file/,
+    command: (tag, needle) => `playlistfind ${tag} ${needle}\n`,
+    testInputs: [
+      [EXAMPLE_TAG, ''],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'playlistid': {
-    parser: /file/,
+    command: songid => `playlistid ${songid}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'playlistinfo': {
-    parser: /file/,
+    command: pos => `playlistinfo ${Array.isArray(pos) ? pos.slice(0, 2).join(':') : pos}\n`,
+    testInputs: [
+      [],
+      [0],
+      [[0, 1]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'playlistsearch': {
-    parser: /file/,
+    command: (tag, needle) => `playlistsearch ${tag} ${needle}\n`,
+    testInputs: [
+      [EXAMPLE_TAG, ''],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'plchanges': {
-    parser: /file/,
+    command: (version, range) => `plchanges ${version}` + range != null ? (' ' + fmtRange(range)) : '' + '\n',
+    testInputs: [
+      [EXAMPLE_PLAYLIST-VERSION],
+      [EXAMPLE_PLAYLIST-VERSION, [0, 1]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'plchangesposid': {
-    parser: /file/,
+    command: (version, range) => `plchangesposid ${version}` + range != null ? (' ' + fmtRange(range)) : '' + '\n',
+    testInputs: [
+      [EXAMPLE_PLAYLIST-VERSION],
+      [EXAMPLE_PLAYLIST-VERSION, [0, 1]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'prio': {
-    parser: /file/,
+    command: (priority, range) => `prio ${priority} ${fmtRange(range)}\n`,
+    testInputs: [
+      [100, [0, 1]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'prioid': {
-    parser: /file/,
+    command: (priority, id) => `prioid ${priority} ${id}\n`,
+    testInputs: [
+      [100, EXAMPLE_SONGID],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'rangeid': {
-    parser: /file/,
+    command: (id, range) => `rangeid ${id} ${fmtRange(range)}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID, [null, 5]],
+      [EXAMPLE_SONGID, [4, 5]],
+      [EXAMPLE_SONGID, [4, null]],
+      [EXAMPLE_SONGID, [null, null]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'shuffle': {
-    parser: /file/,
+    command: range => `shuffle` + range != null ? fmtRange(range) : '' + '\n',
+    testInputs: [
+      [],
+      [[0, 4]],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'swap': {
-    parser: /file/,
+    command: (songPos1, songPos2) => `swap ${songPos1} ${songPos2}\n`,
+    testInputs: [
+      [0, 1],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'swapid': {
-    parser: /file/,
+    command: (song1, song2) => `swapid ${song1} ${song2}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID, EXAMPLE_SONGID2],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'addtagid': {
-    parser: /file/,
+    command: (songid, tag, value) => `addtagid ${songid} ${tag} ${value}\n`,
+    testInputs: [
+      [EXAMPLE_SONGID, 'testTag', 'tesTagValue'],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'cleartagid': {
-    parser: /file/,
+    command: (songid, tag) => `cleartagid ${songid}` + tag != null ? 'tag' : '' + '\n',
+    testInputs: [
+      [EXAMPLE_SONGID],
+      [EXAMPLE_SONGID, 'testTag'],
+    ],
     type: 'queue',
     responseType: 'string',
   },
   'listplaylist': {
-    parser: /file/,
+    command: name => `listplaylist ${name}\n`,
+    testInputs: [
+      ['playlistName'],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'listplaylistinfo': {
-    parser: /file/,
+    command: name => `listplaylistinfo ${name}\n`,
+    testInputs: [
+      ['playlistName'],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'listplaylists': {
-    parser: /file/,
+    command: `listplaylists\n`,
+    testInputs: [
+      [],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'load': {
-    parser: /file/,
+    command: (name, range) => `load ${name}` + range != null ? fmtRange(range) : '' + '\n',
+    testInputs: [
+      ['playlistName'],
+      ['playlistName', [0, 4]],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'playlistadd': {
-    parser: /file/,
+    command: (name, uri) => `playlistadd ${name} ${uri}\n`,
+    testInputs: [
+      ['playlistName', EXAMPLE_URI],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'playlistclear': {
-    parser: /file/,
+    command: name => `playlistclear ${name}\n`,
+    testInputs: [
+      ['playlistName']
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'playlistdelete': {
-    parser: /file/,
+    command: (name, songpos) => `playlistdelete ${name} ${songpos}\n`,
+    testInputs: [
+      ['playlistName', 1],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'playlistmove': {
-    parser: /file/,
+    command: (name, fromPos, toPos) => `playlistmove ${name} ${fromPos} ${toPos}\n`,
+    testInputs: [
+      ['playlistName', 0, 1],
+    ],
     type: 'playlist',
     responseType: 'string',
   },
   'rename': {
-    parser: /file/,
+    command: (name, newname) => `rename ${name} ${newName}\n`,
+    testInputs: [],
     type: 'playlist',
     responseType: 'string',
   },
   'rm': {
-    parser: /file/,
+    command: name => `rm ${name}\n`,
+    testInputs: [],
     type: 'playlist',
     responseType: 'string',
   },
   'save': {
-    parser: /file/,
+    command: name => `save ${name}\n`,
+    testInputs: [],
     type: 'playlist',
     responseType: 'string',
   },
   'albumart': {
-    parser: /file/,
+    command: (uri, offset) => `albumart` + uri != null ? (' ' + uri) : '' + offset != null ? (' ' + offset) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'count': {
-    parser: /file/,
+    command: (filter, group) => `count` + filter != null ? (' ' + filter) : '' + group != null ? (' ' + group) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'find': {
-    parser: /file/,
+    command: (filter, sort, window) => `find ${filter}` + sort != null ? (' ' + sort) : '' + window != null ? (' ' + fmtRange(window)) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'findadd': {
-    parser: /file/,
+    command: filter => `findadd ${filter}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'list': {
-    parser: /file/,
+    command: (type, filter, group) => `list ${type} ${filter}` + group != null ? (' ' + group) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'listall': {
-    parser: /file/,
+    command: uri => `listall ${uri}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
     deprecated: true,
   },
   'listallinfo': {
-    parser: /file/,
+    command: uri => `listallinfo ${uri}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
     deprecated: true,
   },
   'listfiles': {
-    parser: /file/,
+    command: uri => `listfiles` + uri != null ? (' ' + uri) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'lsinfo': {
-    parser: /file/,
+    command: uri => `lsinfo ${uri}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'readcomments': {
-    parser: /file/,
+    command: uri => `readcomments` url != null ? (' ' + uri) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'search': {
-    parser: /file/,
+    command: (filter, sort, window) => `search ${filter}` + sort != null ? (' ' + sort) : '' + window != null ? (' ' + fmtRange(window)) : '' + '\n',
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'searchadd': {
-    parser: /file/,
+    command: filter => `searchadd ${filter}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'searchaddpl': {
-    parser: /file/,
+    command: (name, filter) => `searchaddpl ${name} ${filter}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'update': {
-    parser: /file/,
+    command: uri => `update` + uri != null ? (' ' + uri) : '' + \n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'rescan': {
-    parser: /file/,
+    command: uri => `rescan` + uri != null ? (' ' + uri) : '' + \n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'mount': {
-    parser: /file/,
+    command: (path, uri) => `mount ${path} ${uri}\n`,
+    testInputs: [],
     type: 'mount',
     responseType: 'string',
   },
   'unmount': {
-    parser: /file/,
+    command: path => `unmount ${path}\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'listmounts': {
-    parser: /file/,
+    command: `listmounts\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'listneighbors': {
-    parser: /file/,
+    command: `listneighbors\n`,
+    testInputs: [],
     type: 'database',
     responseType: 'string',
   },
   'close': {
-    parser: /file/,
+    command: `close\n`,
+    testInputs: [],
     type: 'connection',
     responseType: null,
     deprecated: true,
   },
   'kill': {
-    parser: /file/,
+    command: `kill\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
     deprecated: true,
   },
   'password': {
-    parser: /file/,
+    command: password => `password ${password}\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'ping': {
-    parser: /file/,
+    command: `ping\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'tagtypes': {
-    parser: /file/,
+    command: command => `tagtypes' + command != null ? (' ' + command) : '' + '\n',
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'partition': {
-    parser: /file/,
+    command: name => `partition ${name}\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'listpartitions': {
-    parser: /file/,
+    command: `listpartitions\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'newpartition': {
-    parser: /file/,
+    command: name => `newpartition ${name}\n`,
+    testInputs: [],
     type: 'connection',
     responseType: 'string',
   },
   'disableoutput': {
-    parser: /file/,
+    command: id => `disableoutput ${id}\n`,
+    testInputs: [],
     type: 'devices',
     responseType: 'string',
   },
   'enableoutput': {
-    parser: /file/,
+    command: id => `enableoutput ${id}\n`,
+    testInputs: [],
     type: 'devices',
     responseType: 'string',
   },
   'toggleoutput': {
-    parser: /file/,
+    command: id => `toggleoutput ${id}\n`,
+    testInputs: [],
     type: 'devices',
     responseType: 'string',
   },
   'outputs': {
-    parser: /file/,
+    command: `outputs\n`,
+    testInputs: [],
     type: 'devices',
     responseType: 'string',
   },
   'outputset': {
-    parser: /file/,
+    command: (id, name, value) => `outputset ${id} ${name} ${value}\n`,
+    testInputs: [],
     type: 'devices',
     responseType: 'string',
+    parser: txt => {
+    },
   },
   'config': {
-    parser: /file/,
+    command: `config\n`,
+    testInput: [],
     type: 'reflection',
     responseType: 'string',
+    parser: txt => {
+      const re = /(?<keyName>\w+): (?<valueName>[\w\/\+\-]+)/g;
+      let match, config = {};
+      while ((match = re.exec(txt)) !== null) {
+        const {keyName, valueName} = match.groups;
+        config[keyName] = valueName;
+      }
+      return config;
+    },
   },
   'commands': {
-    parser: /file/,
+    command: `commands\n`,
+    testInputs: [],
     type: 'reflection',
     responseType: 'string',
+    parser: txt => {
+      const re = /command: (?<command>[\w]+)/g;
+      let match, commands = [];
+      while ((match = re.exec(txt)) !== null) {
+        const {command} = match.groups;
+        commands.push(command);
+      }
+      return commands;
+    },
   },
   'notcommands': {
-    parser: /file/,
+    command: `notcommands\n`,
+    testInputs: [],
     type: 'reflection',
     responseType: 'string',
   },
   'urlhandlers': {
-    parser: /file/,
+    command: `urlhandlers\n`,
+    testInputs: [],
     type: 'reflection',
     responseType: 'string',
+    parser: txt => {
+      const re = /handler: (?<handler>[\w]+:\/\/)/g;
+      let match, handlers = [];
+      while ((match = re.exec(txt)) !== null) {
+        const {handler} = match.groups;
+        handlers.push(handler);
+      }
+      return handlers;
+    },
   },
   'decoders': {
-    parser: /file/,
+    command: `decoders\n`,
+    testInputs: [],
     type: 'reflection',
     responseType: 'string',
+    parser: txt => {
+      const re = /(?<keyName>\w+): (?<valueName>[\w\/\+\-]+)/g
+      let match, plugin, plugins = [];
+      while ((match = re.exec(txt)) !== null) {
+        const {keyName, valueName} = match.groups;
+        if (keyName === 'plugin') {
+          if (plugin != null) {
+            plugins.push(plugin);
+          }
+          plugin = {name: valueName};
+        } else if (plugin != null) {
+          plugin[keyName] = (plugin[keyName] == null ? [valueName] : [...plugin[keyName], valueName]);
+        }
+      }
+      return plugins;
+    },
   },
 };
+
+function fmtRange(arr) {
+  return arr.slice(0, 2).join(':');
+}

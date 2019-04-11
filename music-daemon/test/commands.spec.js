@@ -1,6 +1,7 @@
 const assert = require('assert').strict;
 const {Socket} = require('net');
 const config = require('../config');
+const fs = require('fs');
 
 const commands = require('../commands');
 
@@ -20,8 +21,13 @@ function setupSocket() {
   });
 }
 
+const outputDir = path.resolve(__dirname, 'output');
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
+
 describe('commands', () => {
-  let process, socket;
+  let process, socket, oof = false;
   beforeEach(async () => {
     socket = await setupSocket();
   });
@@ -37,9 +43,7 @@ describe('commands', () => {
       });
       if (commandName === 'idle') {
         it('should wait until second command runs', async () => {
-          console.log('waiting on second socket');
           const secondSocket = await setupSocket();
-          console.log('waiting on second socket. DONE.');
 
           cb0 = new Promise(r => socket.once('data', buf => r(buf.toString())));
           cb1 = new Promise(r => secondSocket.once('data', buf => r(buf.toString())));
@@ -55,7 +59,14 @@ describe('commands', () => {
         it('should run command via socket', async () => {
           socket.write(`${commandName}\n`);
           const data = await new Promise(r => socket.once('data', buf => r(buf.toString())));
-          console.log(JSON.stringify(data));
+          if (parameters.parser) {
+            const result = parameters.parser(data);
+            if (!oof) {
+              console.log(result);
+              oof = true;
+            }
+          }
+          fs.writeFileSync(path.join(outputDir, `${commandName}.txt`), data);
         }).timeout(5000);
       }
     });
