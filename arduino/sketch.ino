@@ -16,13 +16,28 @@ int stage = -1;
 int pulses[2];
 char chars[] = "ABCDEFGHJKLMNPQRSTUV";
 
+unsigned long lastHB;
+
+void doReset() {
+  pulses[0] = 0;
+  pulses[1] = 0;
+  stage = -1;
+  lastState = 0;
+}
+
 void loop() {
   unsigned long now = millis();
   int diff = now - last;
   
   // if it's been a while, or last stage & a while, reset
-  if ((stage > -1 && diff > 1000) || (stage == 1 && diff > 200)) {
-    int num = 20 - pulses[1];
+  if (stage > -1 && diff > 1000) {
+    doReset();
+    return;
+  }
+  if (stage == 1 && diff > 200) {
+    serial.print("input:");
+    
+    int  num = 20 - pulses[1];
     serial.print(chars[num]);
     
     serial.print(',');
@@ -30,10 +45,7 @@ void loop() {
     num = 10 - pulses[0];
     serial.println(num);
     
-    pulses[0] = 0;
-    pulses[1] = 0;
-    stage = -1;
-    lastState = 0;
+    doReset();
     return;
   }
   int state = digitalRead(PIN);
@@ -54,5 +66,10 @@ void loop() {
     }
 
     pulses[stage]++;
+    return;
+  }
+  if (stage == -1 && now - lastHB > 1000) {
+    serial.println("hb");
+    lastHB = now;
   }
 }
