@@ -2888,8 +2888,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="990 170 990 200 940 200"
-       id="gge4069"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="element-e18"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge4069" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
@@ -2901,9 +2902,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_netLabel_netPort"
        c_etype="pinpart"
        c_origin="1030,240"
-       id="gge4788"
+       id="element-e19"
        c_shapetype="group"
-       c_rotation="180">
+       c_rotation="180"
+       inkscape:label="#gge4788">
       <circle
          c_pindot="true"
          class="pindot"
