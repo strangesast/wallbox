@@ -13,7 +13,7 @@
    version="1.1"
    id="svg2997"
    sodipodi:docname="schematic_cropped.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+   inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata3003">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,8 +37,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="3000"
+     inkscape:window-height="1936"
      id="namedview2999"
      showgrid="false"
      inkscape:pagecheckerboard="true"
@@ -46,11 +46,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.4337568"
-     inkscape:cx="526.05978"
-     inkscape:cy="180.92788"
+     inkscape:zoom="5.7350272"
+     inkscape:cx="193.42532"
+     inkscape:cy="181.22431"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="g1" />
   <style
@@ -71,9 +71,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="265,235"
        c_para="package`BRIDGE-WOB`BOM_Supplier`LCSC`BOM_Manufacturer`MDD`BOM_Manufacturer Part`2W10`image`//image.lceda.cn/szlcsc/C3064.jpg`BOM_Supplier Part`C3064`spicePre`D`"
        c_partid="part_import_gge59"
-       id="gge59"
+       id="b0"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge59">
       <g
          c_partid="part_annotation"
          id="gge61">
@@ -339,10 +340,11 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="110,240"
        c_para="package`HDR-1X2/2.54`BOM_Supplier`LCSC`BOM_Manufacturer`BOOMELE`BOM_Manufacturer Part`2.54-1*2PFemale`image`//image.lceda.cn/szlcsc/C49661.jpg`BOM_Supplier Part`C49661`spicePre`P`"
        c_partid="part_import_gge146"
-       id="gge146"
+       id="a0"
        c_shapetype="group"
        c_etype="pinpart"
-       c_rotation="180">
+       c_rotation="180"
+       inkscape:label="#gge146">
       <g
          c_partid="part_annotation"
          id="gge148">
@@ -483,21 +485,24 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="125 235 175 235 175 175 265 175 265 205"
-       id="gge189"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="a1"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge189" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="125 245 175 245 175 300 265 300 265 265"
-       id="gge190"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="a2"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge190" />
     <g
        c_origin="405,225"
        c_para="package`TO-220(TO-220-3)`BOM_Supplier`LCSC`BOM_Manufacturer`STMicroelectronics`BOM_Manufacturer Part`L7805ABV`image`//image.lceda.cn/szlcsc/C16807.jpg`BOM_Supplier Part`C16807`spicePre`U`"
        c_partid="part_import_gge191"
-       id="gge191"
+       id="c0"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge191">
       <g
          c_partid="part_annotation"
          id="gge193">
@@ -704,21 +709,24 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="295 235 295 210 355 210"
-       id="gge252"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="b2"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge252" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="235 235 220 235 220 290 405 290 405 250"
-       id="gge253"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="b1"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge253" />
     <g
        c_origin="335,250"
        c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part``spicePre`C`spiceSymbolName`Cap_RAD-0.1_US`"
        c_partid="part_import_gge254"
-       id="gge254"
+       id="b3"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge254">
       <g
          c_partid="part_annotation"
          id="gge256">
@@ -884,9 +892,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="570,245"
        c_para="package`DIP-4`BOM_Supplier`LCSC`BOM_Manufacturer`SHARP`BOM_Manufacturer Part`PC817X2NSZ9F(B)`image`//image.lceda.cn/szlcsc/C60965.jpg`BOM_Supplier Part`C60965`spicePre`U`"
        c_partid="part_import_gge477"
-       id="gge477"
+       id="d0"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge477">
       <g
          c_partid="part_annotation"
          id="gge479">
@@ -1172,9 +1181,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="485,210"
        c_para="package`AXIAL-0.3`nameAlias`Value(Ω)`BOM_Manufacturer Part``spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`"
        c_partid="part_import_gge570"
-       id="gge570"
+       id="c1"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge570">
       <g
          c_partid="part_annotation"
          id="gge572">
@@ -1342,21 +1352,24 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="505 210 525 210 525 235"
-       id="gge659"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="c3"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge659" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="525 255 525 290 405 290"
-       id="gge662"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="c2"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge662" />
     <g
        c_origin="660,260"
        c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part``spicePre`C`spiceSymbolName`Cap_RAD-0.1_US`"
        c_partid="part_import_gge664"
-       id="gge664"
+       id="d8"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge664">
       <g
          c_partid="part_annotation"
          id="gge666">
@@ -1510,10 +1523,11 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="660,330"
        c_para="package`AXIAL-0.3`nameAlias`Value(Ω)`BOM_Manufacturer Part``spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`"
        c_partid="part_import_gge713"
-       id="gge713"
+       id="d4"
        c_shapetype="group"
        c_etype="pinpart"
-       c_rotation="90">
+       c_rotation="90"
+       inkscape:label="#gge713">
       <g
          c_partid="part_annotation"
          id="gge715">
@@ -1679,10 +1693,11 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="720,330"
        c_para="package`LED-3MM/2.54`BOM_Supplier`LCSC`BOM_Manufacturer`EVERLIGHT`BOM_Manufacturer Part`204-10SURD/S530-A3`BOM_Supplier Part`C99772`spicePre`L`"
        c_partid="part_import_gge768"
-       id="gge768"
+       id="d7"
        c_shapetype="group"
        c_etype="pinpart"
-       c_rotation="270">
+       c_rotation="270"
+       inkscape:label="#gge768">
       <g
          c_partid="part_annotation"
          id="gge770">
@@ -1847,9 +1862,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_netLabel_gnD"
        c_etype="pinpart"
        c_origin="660,355"
-       id="gge832"
+       id="d5"
        c_shapetype="group"
-       c_rotation="0">
+       c_rotation="0"
+       inkscape:label="#gge832">
       <circle
          c_pindot="true"
          class="pindot"
@@ -1900,9 +1916,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_netLabel_gnD"
        c_etype="pinpart"
        c_origin="715,355"
-       id="gge852"
+       id="d6"
        c_shapetype="group"
-       c_rotation="0">
+       c_rotation="0"
+       inkscape:label="#gge852">
       <circle
          c_pindot="true"
          class="pindot"
@@ -1953,14 +1970,16 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="615 235 660 235 660 240"
-       id="gge867"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="d2"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge867" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="615 255 615 295 660 295 660 280"
-       id="gge871"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="d1"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge871" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
@@ -1977,9 +1996,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_origin="900,230"
        c_para="package`SOIC-14_150MIL`BOM_Supplier`LCSC`BOM_Supplier Part`C233622`BOM_Manufacturer`ON Semicon`BOM_Manufacturer Part`MC74HCT14ADG`Contributor`LCSC`spicePre`U`"
        c_partid="part_import_gge1813"
-       id="gge1813"
+       id="e0"
        c_shapetype="group"
-       c_etype="pinpart">
+       c_etype="pinpart"
+       inkscape:label="#gge1813">
       <g
          c_partid="part_annotation"
          id="gge1815">
@@ -2700,9 +2720,10 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_netLabel_VCC"
        c_etype="pinpart"
        c_origin="660,175"
-       id="gge2026"
+       id="d9"
        c_shapetype="group"
-       c_rotation="0">
+       c_rotation="0"
+       inkscape:label="#gge2026">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2732,15 +2753,17 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="660 175 660 235"
-       id="gge2038"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="d3"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2038" />
     <g
        c_partid="part_netLabel_gnD"
        c_etype="pinpart"
        c_origin="845,355"
-       id="gge2045"
+       id="e12"
        c_shapetype="group"
-       c_rotation="0">
+       c_rotation="0"
+       inkscape:label="#gge2045">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2785,45 +2808,52 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="845 355 845 260 860 260"
-       id="gge2063"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e6"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2063" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="860 240 845 240 845 260"
-       id="gge2064"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e9"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2064" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="860 220 845 220 845 240"
-       id="gge2066"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e7"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2066" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="860 200 845 200 845 220"
-       id="gge2068"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e8"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2068" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="940 210 1000 210 1000 295 715 295"
-       id="gge2071"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="d10"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2071" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="940 220 965 220 965 230 940 230"
-       id="gge2073"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e3"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge2073" />
     <g
        c_partid="part_netLabel_VCC"
        c_etype="pinpart"
        c_origin="990,170"
-       id="gge4056"
+       id="e1"
        c_shapetype="group"
-       c_rotation="0">
+       c_rotation="0"
+       inkscape:label="#gge4056">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2853,21 +2883,24 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="990 170 990 200 940 200"
-       id="gge4069"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e2"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge4069" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
        points="940 250 965 250 965 280 845 280"
-       id="gge4071"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e5"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge4071" />
     <g
        c_partid="part_netLabel_netPort"
        c_etype="pinpart"
        c_origin="1030,240"
-       id="gge4788"
+       id="e10"
        c_shapetype="group"
-       c_rotation="180">
+       c_rotation="180"
+       inkscape:label="#gge4788">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2892,14 +2925,16 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="940 240 1030 240"
-       id="gge4798"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="e11"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge4798" />
     <g
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="845,280"
-       id="gge4072"
-       c_shapetype="group">
+       id="e16"
+       c_shapetype="group"
+       inkscape:label="#gge4072">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2919,8 +2954,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="715,295"
-       id="gge2072"
-       c_shapetype="group">
+       id="d12"
+       c_shapetype="group"
+       inkscape:label="#gge2072">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2940,8 +2976,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="845,220"
-       id="gge2069"
-       c_shapetype="group">
+       id="e13"
+       c_shapetype="group"
+       inkscape:label="#gge2069">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2961,8 +2998,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="845,260"
-       id="gge2065"
-       c_shapetype="group">
+       id="e15"
+       c_shapetype="group"
+       inkscape:label="#gge2065">
       <circle
          c_pindot="true"
          class="pindot"
@@ -2982,8 +3020,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="660,235"
-       id="gge2039"
-       c_shapetype="group">
+       id="d14"
+       c_shapetype="group"
+       inkscape:label="#gge2039">
       <circle
          c_pindot="true"
          class="pindot"
@@ -3003,8 +3042,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="335,210"
-       id="gge305"
-       c_shapetype="group">
+       id="b5"
+       c_shapetype="group"
+       inkscape:label="#gge305">
       <circle
          c_pindot="true"
          class="pindot"
@@ -3024,8 +3064,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="335,290"
-       id="gge307"
-       c_shapetype="group">
+       id="b7"
+       c_shapetype="group"
+       inkscape:label="#gge307">
       <circle
          c_pindot="true"
          class="pindot"
@@ -3045,8 +3086,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="405,290"
-       id="gge663"
-       c_shapetype="group">
+       id="b6"
+       c_shapetype="group"
+       inkscape:label="#gge663">
       <circle
          c_pindot="true"
          class="pindot"
@@ -3066,8 +3108,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="660,295"
-       id="gge873"
-       c_shapetype="group">
+       id="d13"
+       c_shapetype="group"
+       inkscape:label="#gge873">
       <circle
          c_pindot="true"
          class="pindot"
@@ -3087,8 +3130,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="845,240"
-       id="gge2067"
-       c_shapetype="group">
+       id="e14"
+       c_shapetype="group"
+       inkscape:label="#gge2067">
       <circle
          c_pindot="true"
          class="pindot"
