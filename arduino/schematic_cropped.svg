@@ -42,8 +42,8 @@
      id="namedview2980"
      showgrid="false"
      inkscape:zoom="4.4250757"
-     inkscape:cx="828.30609"
-     inkscape:cy="150.7608"
+     inkscape:cx="656.55762"
+     inkscape:cy="60.366864"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -1913,8 +1913,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="660 355 660 350"
-       id="gge850"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="element-d18"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge850" />
     <g
        c_partid="part_netLabel_gnD"
        c_etype="pinpart"
@@ -1967,8 +1968,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_etype="wire"
        c_shapetype="line"
        points="715 355 715 350"
-       id="gge861"
-       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges" />
+       id="element-d17"
+       style="fill:none;stroke:#008800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+       inkscape:label="#gge861" />
     <polyline
        c_etype="wire"
        c_shapetype="line"
@@ -3025,8 +3027,9 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        c_partid="part_junction"
        c_etype="pinpart"
        c_origin="660,235"
-       id="gge2039"
-       c_shapetype="group">
+       id="element-d19"
+       c_shapetype="group"
+       inkscape:label="#gge2039">
       <circle
          c_pindot="true"
          class="pindot"
