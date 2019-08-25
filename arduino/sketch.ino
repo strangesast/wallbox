@@ -15,6 +15,7 @@ unsigned long last;
 int stage = -1;
 int pulses[2];
 char chars[] = "ABCDEFGHJKLMNPQRSTUV";
+
 unsigned long lastHB;
 
 void doReset() {
