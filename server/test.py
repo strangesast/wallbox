@@ -1,11 +1,11 @@
 import os
 import asyncio
 
-MPD_HOST = os.environ.get('MPD_HOST') or 'localhost'
+SERVER_HOST = os.environ.get('SERVER_HOST') or 'localhost'
 
 async def tcp_echo_client():
     reader, writer = await asyncio.open_connection(
-        MPD_HOST, 6600)
+        SERVER_HOST, 6600)
 
     data = await reader.read(100)
     print(f'Received: {data.decode()!r}')

@@ -1,20 +1,33 @@
 version: "3.7"
 services:
-  server:
+  mpd:
+    image: wallbox_mpd
     build:
       context: .
-      dockerfile: server/Dockerfile
+      dockerfile: mpd/Dockerfile
     ports:
       - "6600:6600"
     devices:
       - /dev/snd
     volumes:
       - "/mnt/c/TorrentFiles/music:/var/lib/mpd/music"
-  client:
-    build:
-      context: .
-      dockerfile: client/Dockerfile
-    depends_on:
-      - server
-    environment:
-      - SERVER_HOST=server
+        #  server:
+        #    image: wallbox_server
+        #    build:
+        #      context: .
+        #      dockerfile: server/Dockerfile
+        #    ports:
+        #      - "8080:8080"
+        #    environment:
+        #      - MPD_HOST=mpd
+        #    depends_on:
+        #      - mpd
+        #  client:
+        #    image: wallbox_client
+        #    build:
+        #      context: .
+        #      dockerfile: client/Dockerfile
+        #    depends_on:
+        #      - mpd
+        #    environment:
+        #      - MPD_HOST=mpd
