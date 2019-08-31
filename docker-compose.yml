@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "6600:6600"
+    devices:
+      - /dev/snd
+    volumes:
+      - "/mnt/c/TorrentFiles/music:/var/lib/mpd/music"
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    depends_on:
+      - server
+    environment:
+      - SERVER_HOST=server
