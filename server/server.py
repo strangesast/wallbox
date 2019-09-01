@@ -2,6 +2,7 @@ import os
 import asyncio
 from aiohttp import web
 from contextvars import ContextVar
+from datetime import datetime
 import re
 
 MPD_HOST = os.environ.get('MPD_HOST') or 'localhost'
@@ -10,6 +11,8 @@ MPD_PORT = os.environ.get('MPD_PORT') or '6600'
 queue_var = ContextVar('queue')
 
 version_re = re.compile('OK MPD (?P<version>[\d.]+)')
+#file_re = re.compile('(file:\s(?P<filename>[\w\S ]+)$\nsize:\s(?P<filesize>[\d]+)$\nLast-Modified:\s(?P<filemodified>[\w\S]+)$\n)|(directory:\s(?P<directoryname>[\w\S ]+)$\nLast-Modified:\s(?P<foldermodified>[\w -:.]+)$\n)', re.M)
+file_re = re.compile('(?P<name>(directory|file): ([\w\S ]+)$\n)(?P<size>size: ([\d]+)$\n)?(?P<lastmodified>Last-Modified: ([\w\S ]+)$\n)', re.M)
 
 async def worker():
     reader, writer = await asyncio.open_connection(MPD_HOST, MPD_PORT)
@@ -48,6 +51,26 @@ async def get_status(request):
     return web.json_response(response)
 
 
+def parse_dir(txt):
+    for each in file_re.finditer(txt):
+        kind = each.group(2)
+        name = each.group(3)
+        modified = datetime.strptime(each.group(7), '%Y-%m-%dT%H:%M:%SZ') if each.group(6) is not None else None
+        if kind == 'file':
+            size = int(each.group(5)) if each.group(4) is not None else None
+            yield {"type": kind, "name": name, "size": size, "last-modified": modified.isoformat()}
+        else:
+            yield {"type": kind, "name": name, "last-modified": modified.isoformat()}
+
+
+async def get_directory(request):
+    tail = request.match_info.get('tail', '')
+    response = await do_command(f'listfiles "{tail}"\n')
+    response = list(parse_dir(response))
+
+    return web.json_response(response)
+
+
 async def handle(request):
     print('got request')
     name = request.match_info.get('name', "Anonymous")
@@ -57,6 +80,8 @@ async def handle(request):
 app = web.Application()
 app.add_routes([web.get('/', handle),
                 web.get('/status', get_status),
+                web.get('/list', get_directory),
+                web.get('/list/{tail:.*}', get_directory),
                 #web.get('/{name}', handle),
                 ])
 
