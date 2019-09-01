@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  proxy:
+    image: wallbox_proxy
+    network_mode: host
+    build:
+      network: host
+      context: .
+      dockerfile: docker/proxy/dev.Dockerfile
+  mpd:
+    image: wallbox_mpd
+    network_mode: host
+    build:
+      network: host
+      context: .
+      dockerfile: docker/mpd/Dockerfile
+    devices:
+      - /dev/snd
+    volumes:
+      #- "/home/samuel/Music:/var/lib/mpd/music"
+      - "/mnt/c/TorrentFiles/music/:/var/lib/mpd/music"

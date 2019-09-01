@@ -30,4 +30,5 @@ RUN npm run-script build
 FROM nginx
 
 COPY --from=0 /app/dist/wallbox/ /usr/share/nginx/html/
-COPY angular-client/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/angular-client.conf /etc/nginx/nginx.conf
+CMD ["nginx", "-g", "daemon off;"]

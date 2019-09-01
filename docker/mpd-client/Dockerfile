@@ -4,6 +4,6 @@ FROM python:3
 #RUN pip install -r requirements.txt
 
 WORKDIR /app
-COPY client/test.py .
+COPY mpd-client/test.py .
 
 CMD python3 /app/test.py

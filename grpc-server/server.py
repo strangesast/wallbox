@@ -59,9 +59,16 @@ class Wallbox(WallboxBase):
 
         response = {a: b.strip() for p in response[0:-2]
                 for (a, b) in [p.split(':', 1)]}
+
+        for key in ['volume', 'repeat', 'random', 'consume', 'playlist', 'playlistlength', 'song', 'songid', 'nextsong', 'nextsongid', 'time', 'elapsed', 'duration', 'bitrate', 'xfade']:
+            if key in response:
+                response[key] = int(response[key])
+
+        for key in ['mixrampdb', 'mixrampdelay']:
+            if key in response:
+                response[key] = float(response[key])
  
-        message = f'Hello, {request.name}!'
-        await stream.send_message(HelloReply(message=message))
+        await stream.send_message(Status(**response))
 
 
     async def do_command(self, command: str) -> str:
@@ -73,7 +80,7 @@ class Wallbox(WallboxBase):
         return response.decode()
 
 
-async def main(*, host='127.0.0.1', port=50051):
+async def main(*, host='0.0.0.0', port=50051):
     queue = asyncio.Queue()
     server = Server([Wallbox(queue)])
 

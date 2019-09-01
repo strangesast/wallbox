@@ -70,20 +70,20 @@ static_resources:
     #          socket_address:
     #            address: server
     #            port_value: 50051
-  - name: service2
-    connect_timeout: 0.25s
-    type: strict_dns
-    lb_policy: round_robin
-    http2_protocol_options: {}
-    load_assignment:
-      cluster_name: service2
-      endpoints:
-      - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: service2
-                port_value: 80
+    #- name: service2
+    #- connect_timeout: 0.25s
+    #- type: strict_dns
+    #- lb_policy: round_robin
+    #- http2_protocol_options: {}
+    #- load_assignment:
+    #-   cluster_name: service2
+    #-   endpoints:
+    #-   - lb_endpoints:
+    #-     - endpoint:
+    #-         address:
+    #-           socket_address:
+    #-             address: service2
+    #-             port_value: 80
 admin:
   access_log_path: "/dev/null"
   address:
