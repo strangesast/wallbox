@@ -31,4 +31,4 @@ npm start
 ```
 
 If everything works, the web client will be accessible at 0.0.0.0:8080  
-Live reloading works for through `ng serve` (webpack-dev-server) for the web client and optionally `nodemon` for the server but changes to mpd config, envoy proxy settings, and protobuf definitions (and others) will require restart of those services.
+Live reloading works through `webpack-dev-server` for the web client and optionally `nodemon` for the server but changes to mpd config, envoy proxy settings, and protobuf definitions (and others) will require restart of those services.
