@@ -19,6 +19,14 @@ class WallboxBase(abc.ABC):
     async def GetStatus(self, stream: 'grpclib.server.Stream[wallbox_pb2.Empty, wallbox_pb2.Status]') -> None:
         pass
 
+    @abc.abstractmethod
+    async def GetPlaylistInfo(self, stream: 'grpclib.server.Stream[wallbox_pb2.PositionRange, wallbox_pb2.PlaylistInfoResult]') -> None:
+        pass
+
+    @abc.abstractmethod
+    async def GetListFiles(self, stream: 'grpclib.server.Stream[wallbox_pb2.Uri, wallbox_pb2.FileListResult]') -> None:
+        pass
+
     def __mapping__(self) -> typing.Dict[str, grpclib.const.Handler]:
         return {
             '/Wallbox/GetStatus': grpclib.const.Handler(
@@ -26,6 +34,18 @@ class WallboxBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 wallbox_pb2.Empty,
                 wallbox_pb2.Status,
+            ),
+            '/Wallbox/GetPlaylistInfo': grpclib.const.Handler(
+                self.GetPlaylistInfo,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                wallbox_pb2.PositionRange,
+                wallbox_pb2.PlaylistInfoResult,
+            ),
+            '/Wallbox/GetListFiles': grpclib.const.Handler(
+                self.GetListFiles,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                wallbox_pb2.Uri,
+                wallbox_pb2.FileListResult,
             ),
         }
 
@@ -38,6 +58,18 @@ class WallboxStub:
             '/Wallbox/GetStatus',
             wallbox_pb2.Empty,
             wallbox_pb2.Status,
+        )
+        self.GetPlaylistInfo = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/Wallbox/GetPlaylistInfo',
+            wallbox_pb2.PositionRange,
+            wallbox_pb2.PlaylistInfoResult,
+        )
+        self.GetListFiles = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/Wallbox/GetListFiles',
+            wallbox_pb2.Uri,
+            wallbox_pb2.FileListResult,
         )
 
 

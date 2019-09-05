@@ -15,32 +15,38 @@ MPD_PORT = os.environ.get('MPD_PORT') or '6600'
 version_re = re.compile('OK MPD (?P<version>[\d.]+)')
 
 
+async def get_connection():
+    while True:
+        response = None
+        async with asyncio.connect(MPD_HOST, MPD_PORT) as stream:
+            data = await stream.read(100000)
+            if not data:
+                break
+            version = version_re.search(data.decode())
+            if not version:
+                break
+            response = version.group(1)
+
+            print(f'mpd version {response}')
+
+            while response:
+                command = yield response
+                await stream.write(command.encode())
+                data = await stream.read(1000000)
+                print('got data', data)
+                response = data.decode()
+
+
+
 async def worker(queue):
-    reader, writer = await asyncio.open_connection(MPD_HOST, MPD_PORT)
-
-    data = await reader.read(1000000)
-    version = version_re.search(data.decode()).group(1)
-    print(f'mpd version: {version}')
-
+    g = get_connection()
+    await g.asend(None)
     while True:
         command, fut = await queue.get()
-        writer.write(command.encode())
-        data = await reader.read(1000000)
-        fut.set_result(data)
+        response = await g.asend(command)
+        fut.set_result(response)
         queue.task_done()
 
-
-
-async def get_status(request):
-    #name = request.match_info.get('name', "Anonymous")
-    response = await do_command('status\n')
-
-    response = response.split('\n')
-    if response[-1] != '' or response[-2] != 'OK':
-        raise ValueError('unexpected response!')
-
-    response = {a: b.strip() for p in response[0:-2] for (a, b) in [p.split(':', 1)]}
-    return web.json_response(response)
 
 
 class Wallbox(WallboxBase):
@@ -48,10 +54,23 @@ class Wallbox(WallboxBase):
         self.queue = queue
 
 
+    async def GetListFiles(self, stream):
+        request: Uri = await stream.recv_message()
+        print('GetListFiles', request)
+        items = [FileListItem(uri=f'/{i}', name=f'Song File {i}', type='file', size=1000) for i in range(10)]
+        await stream.send_message(FileListResult(items=items, count=len(items)))
+
+    async def GetPlaylistInfo(self, stream):
+        request: PositionRange = await stream.recv_message()
+        print('GetPlaylistInfo', request)
+        items = [PlaylistItem(position=i, uri=f'/{i}', songName=f'Song File {i}') for i in range(10)]
+        await stream.send_message(PlaylistInfoResult(items=items, count=len(items), offset=0))
+
     async def GetStatus(self, stream):
         await stream.recv_message()
 
         response = await self.do_command('status\n')
+        print('response', response)
     
         response = response.split('\n')
         if response[-1] != '' or response[-2] != 'OK':
@@ -77,7 +96,7 @@ class Wallbox(WallboxBase):
         fut = asyncio.get_running_loop().create_future()
         self.queue.put_nowait((command, fut))
         response = await fut
-        return response.decode()
+        return response
 
 
 async def main(*, host='0.0.0.0', port=50051):

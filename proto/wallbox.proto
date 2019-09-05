@@ -6,18 +6,133 @@ import "google/protobuf/api.proto";
 service Wallbox {
   // returns previous temps (if any) in date range, streams further temps
   // if enddate is greater than now or undefined
-  rpc GetStatus(Empty) returns (Status) {}
+  rpc Status(Empty) returns (StatusResult) {}
+  rpc Stats(Empty) returns (StatsResult) {}
 
-  // add stream of temps, presumably as they are recorded
-  //rpc RecordTemps(stream Temps) returns (google.protobuf.Empty) {}
-  //rpc RecordTemps(stream Temps) returns (TempsWriteSummary) {}
+  rpc PlaybackNext(Empty) returns (Empty) {} // should probably return song info
+  rpc PlaybackPause(Empty) returns (Empty) {}
+  rpc PlaybackPrevious(Empty) returns (Empty) {} // should probably return song info
+  rpc PlaybackStop(Empty) returns (Empty) {}
 
+  rpc CurrentSong(Empty) returns (SongInfo) {}
+
+  rpc DatabaseListFiles(Uri) returns (FileListResult) {}
+
+  // Adds the file URI to the playlist (directories add recursively). URI can also be a single file.
+  rpc QueueAdd(Uri) returns (Empty) {}
+
+  // Adds a song to the playlist (non-recursive) and returns the song id. URI is always a single file or URL. For example:
+  // addid "foo.mp3"
+  // Id: 999
+  // OK
+  rpc QueueAddId(UriPosition) returns (QueuePosition) {}
+
+  // Clears the queue.
+  rpc QueueClear(Empty) returns (Empty) {}
+
+  // delete [{POS} | {START:END}]
+  // Deletes a song from the playlist.
+  rpc QueueDelete(PositionRange) returns (Empty) {}
+
+  // Deletes the song SONGID from the playlist
+  rpc QueueDeleteId(QueuePosition) returns (Empty) {}
+
+  // Moves the song at FROM or range of songs at START:END [2] to TO in the playlist.
+  rpc QueueMove(PositionRangeTo) returns (Empty) {}
+
+  // Moves the song with FROM (songid) to TO (playlist index) in the playlist. If TO is negative, it is relative to the current song in the playlist (if there is one).
+  rpc QueueMoveId(PositionFromTo) returns (Empty) {}
+
+  // Finds songs in the queue with strict matching.
+  rpc QueuePlaylistFind(TagNeedle) returns (QueueFindResult) {}
+
+  // Displays a list of songs in the playlist. SONGID is optional and specifies a single song to display info for.
+  rpc QueuePlaylistId(QueuePosition) returns (PlaylistResult) {}
+
+  // Displays a list of all songs in the playlist, or if the optional argument is given, displays information only for the song SONGPOS or the range of songs START:END [2]
+  rpc QueuePlaylistInfo(PositionRange) returns (PlaylistResult) {}
+
+  // Searches case-insensitively for partial matches in the queue.
+  rpc QueuePlaylistSearch(TagNeedle) returns (PlaylistResult) {}
+
+  // Displays changed songs currently in the playlist since VERSION. Start and end positions may be given to limit the output to changes in the given range.
+  // To detect songs that were deleted at the end of the playlist, use playlistlength returned by status command.
+  rpc QueuePlaylistChanges(PlaylistChangesQuery) returns (PlaylistChanges) {}
+
+  // Displays changed songs currently in the playlist since VERSION. This function only returns the position and the id of the changed song, not the complete metadata. This is more bandwidth efficient.
+  // To detect songs that were deleted at the end of the playlist, use playlistlength returned by status command.
+  rpc QueuePlaylistChangesPosId(PlaylistChangesQuery) returns (PlaylistChanges) {}
+
+
+  // Set the priority of the specified songs. A higher priority means that it will be played first when “random” mode is enabled.
+  // A priority is an integer between 0 and 255. The default priority of new songs is 0.
+  // Same as priod, but address the songs with their id.
+  rpc QueuePriority(QueuePriorityRequest) returns (Empty) {}
+
+  // Since MPD 0.19 Specifies the portion of the song that shall be played. START and END are offsets in seconds (fractional seconds allowed); both are optional. Omitting both (i.e. sending just “:”) means “remove the range, play everything”. A song that is currently playing cannot be manipulated this way.
+  rpc QueueRangeId(QueueRangeRequest) returns (Empty) {}
+
+  // Shuffles the queue. START:END is optional and specifies a range of songs.
+  rpc QueueShuffle(PositionRange) returns (Empty) {}
+
+  // Swaps the positions of SONG1 and SONG2.
+  rpc QueueSwap(PositionPair) returns (Empty) {}
+
+  // Swaps the positions of SONG1 and SONG2 (both song ids).
+  rpc QueueSwapId(IdPair) returns (Empty) {}
+
+  // Adds a tag to the specified song. Editing song tags is only possible for remote songs. This change is volatile: it may be overwritten by tags received from the server, and the data is gone when the song gets removed from the queue.
+  rpc QueueAddTagId(IdTagValue) returns (Empty) {}
+
+  // Removes tags from the specified song. If TAG is not specified, then all tag values will be removed. Editing song tags is only possible for remote songs.
+  rpc QueueClearTagId(IdTag) returns (Empty) {}
+}
+
+message Uri {
+  string uri = 1;
+}
+
+message FileListResult {
+  message FileListItem {
+    string uri = 1;
+    string name = 2;
+    string type = 3; // file / directory
+    int32 size = 4; // applicable to file, only
+  }
+  repeated FileListItem items = 1;
+  int32 count = 2;
+}
+
+message PositionRange {
+  int32 start = 1;
+  int32 end = 2; // optional
+}
+
+message PositionFromTo {
+  int32 from = 1;
+  int32 to = 2;
 }
 
 message Empty {
 }
 
-message Status {
+message SongInfo {
+  string uri = 1;
+  string name = 2;
+}
+
+message PlaylistResult {
+  message PlaylistItem {
+    string position = 1;
+    string uri = 2;
+    string songName = 3;
+  }
+  repeated PlaylistItem items = 1;
+  int32 count = 2;
+  int32 offset = 3;
+}
+
+message StatusResult {
   int32 volume = 1; // 0 - 100
   int32 repeat = 2; // 0 or 1
   int32 random = 3; // 0 or 1
@@ -40,6 +155,108 @@ message Status {
   string audio = 20; // The format emitted by the decoder plugin during playback, format: samplerate:bits:channels. See Global Audio Format for a detailed explanation.
   string updating_db = 21; // job id
   string error = 22; // if there is an error, returns message here
+}
+
+message StatsResult {
+  int32 artists = 1; // number of artists
+  int32 albums = 2; // number of albums
+  int32 songs = 3; // number of songs
+  int32 uptime = 4; // daemon uptime in seconds
+  int32 db_playtime = 5; // sum of all song times in the database in seconds
+  int32 db_update = 6; // last db update in UNIX time
+  int32 playtime = 7; // time length of music played
+}
+
+message PlaylistChangesQuery {
+ PositionFromTo range = 1;
+ int32 version = 2;
+}
+
+message PlaylistChanges {
+  message PlaylistChange {
+    int32 pos = 1;
+    int32 id = 2;
+  }
+  repeated PlaylistChange changes = 1;
+  int32 count = 2;
+  int32 offset = 3;
+}
+
+message QueuePositionList {
+  repeated int32 ids = 1;
+}
+
+message QueuePriorityRequest {
+  int32 priority = 1; // 0 - 255, default 0
+  oneof sel {
+    PositionRange range = 2;
+    QueuePositionList ids = 3;
+  }
+}
+
+message QueueRangeRequest {
+  int32 position = 1;
+  SongDurationRange range = 2; // optional, ':' if omitted
+}
+
+message SongDurationRange {
+  float start = 1;
+  float end = 2;
+}
+
+message SongIdTag {
+  int32 id = 1;
+  string tag = 2; // optional
+}
+
+message TagNeedle {
+ string tag = 1;
+ string needle = 2;
+}
+
+message QueueFindResult {
+  message QueueEntry {
+    string uri = 1;
+    int32 id = 2;
+  }
+  repeated QueueEntry results = 1;
+  int32 count = 2;
+  int32 offset = 3;
+}
+
+message UriPosition {
+  string uri = 1;
+  int32 position = 2; // optional
+}
+
+message PositionRangeTo {
+  PositionRange from = 1;
+  int32 to = 2;
+}
+
+message QueuePosition {
+  int32 position = 1;
+}
+
+message PositionPair {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message IdPair {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message IdTagValue {
+  int32 id = 1;
+  string tag = 2;
+  string value = 3;
+}
+
+message IdTag {
+  int32 id = 1;
+  string tag = 2; // optional
 }
 
 message ListApisRequest {
