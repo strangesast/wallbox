@@ -1,0 +1,12 @@
+{
+  "name": "wallbox_grpc-server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon --exec ./env/bin/python3 ./server.py"
+  },
+  "author": "Sam Zagrobelny <strangesast@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

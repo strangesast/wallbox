@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/api.proto";
-//import "google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
 
 service Wallbox {
   // returns previous temps (if any) in date range, streams further temps
@@ -123,9 +123,18 @@ message SongInfo {
 
 message PlaylistResult {
   message PlaylistItem {
-    string position = 1;
-    string uri = 2;
-    string songName = 3;
+    int32 id = 1;
+    int32 position = 2;
+    string filename = 3;
+    google.protobuf.Timestamp lastModified = 4;
+    string artist = 5;
+    string title = 6;
+    string album = 7;
+    int32 time = 9;
+    float duration = 10;
+    string genre = 11;
+    string date = 12;
+    int32 track = 13;
   }
   repeated PlaylistItem items = 1;
   int32 count = 2;
@@ -136,7 +145,7 @@ message StatusResult {
   int32 volume = 1; // 0 - 100
   int32 repeat = 2; // 0 or 1
   int32 random = 3; // 0 or 1
-  string single = 4; // 0, 1, or oneshot [6]
+  int32 single = 4; // 0, 1, or oneshot [6]
   int32 consume = 5; // 0 or 1
   int32 playlist = 6; // 31-bit unsigned integer, the playlist version number
   int32 playlistlength = 7; // integer, the length of the playlist
