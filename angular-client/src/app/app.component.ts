@@ -6,6 +6,13 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   template: `
+  <header>
+    <nav>
+      <a [routerLink]="['/queue']">Queue</a>
+      <a [routerLink]="['/playlists']">Playlists</a>
+      <a [routerLink]="['/files']">Files</a>
+    </nav>
+  </header>
   <div class="container">
     <router-outlet></router-outlet>
   </div>

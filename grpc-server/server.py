@@ -21,6 +21,9 @@ version_re = re.compile('OK MPD (?P<version>[\d.]+)')
 # or
 # timestamp.ToDatetime()
 
+def timestamp_from_str(s):        
+  return Timestamp().FromDatetime(datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ'))
+
 async def get_connection():
     command = None
     retry = 0
@@ -50,19 +53,16 @@ async def get_connection():
 
 async def worker(queue):
     while True:
-        print('worker waiting...')
         command, fut = await queue.get()
         print('got command, waiting for connection: {}:{}'.format(MPD_HOST, MPD_PORT))
         try:
             async with asyncio.connect(MPD_HOST, MPD_PORT) as stream:
-                print('got connection')
                 data = await stream.read(100000)
                 response = data and (version := version_re.search(data.decode())) and version.group(1) or None
                 print(f'mpd version {response}')
 
                 await stream.write(command.encode())
                 data = await stream.read(1000000)
-                print('got data', data)
                 response = data.decode()
 
                 fut.set_result(response)
@@ -71,7 +71,6 @@ async def worker(queue):
             print('connection over')
 
 
-#response_re = re.compile('(?P<end>OK$)|((?P<key>[\w ]+): (?P<value>[\w \.]+)$)', re.M)
 response_re = re.compile('(?P<end>OK$)|((?P<key>[\w -]+): (?P<value>[\w\S ]+)$)', re.M)
 
 def parse_response(response, value_types_dict):
@@ -102,11 +101,28 @@ class Wallbox(WallboxBase):
 
     async def DatabaseListFiles(self, stream):
         request: Uri = await stream.recv_message()
-        #items = [PlaylistItem(position=i, uri=f'/{i}', songName=f'Song File {i}') for i in range(10)]
-        command_response = await self.do_command('listfiles "{}"\n'.format(request.uri))
-        for match in response_re.finditer(command_response):
-            print(match)
-        items = [pb2.FileListResult.FileListItem(uri='/', name='', type='file', size=0) for _ in range(10)] 
+        uri = request.uri
+        command_response = await self.do_command('listfiles "{}"\n'.format(uri))
+        def parse_array_response(text):
+            last = None
+            for match in response_re.finditer(text):
+                if match.group('end'):
+                    if last:
+                        yield last
+                    return
+                else:
+                    key, value = match.group('key'), match.group('value')
+                    if key == 'file' or key == 'directory':
+                        if last:
+                            yield last
+                        last = {'type': key, 'name': value, 'uri': f'{uri}/{value}' if uri != '' else value}
+                    elif key == 'size':
+                        last['size'] = int(value)
+                    elif key == 'Last-Modified':
+                        last['lastModified'] = timestamp_from_str(value)
+                    else:
+                        raise Exception('unrecognized key ({})'.format(key))
+        items = [pb2.FileListResult.FileListItem(**args) for args in parse_array_response(command_response)]
         response = pb2.FileListResult(items=items, count=len(items))
         await stream.send_message(response)
 

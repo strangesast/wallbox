@@ -10,6 +10,7 @@ import { QueuePageComponent } from './queue-page/queue-page.component';
 import { ControlBarComponent } from './control-bar/control-bar.component';
 import { PlaylistsListPageComponent } from './playlists-list-page/playlists-list-page.component';
 import { FileListPageComponent } from './file-list-page/file-list-page.component';
+import { FileListPageSubComponent } from './file-list-page/file-list-page-sub/file-list-page-sub.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FileListPageComponent } from './file-list-page/file-list-page.component
     QueuePageComponent,
     ControlBarComponent,
     PlaylistsListPageComponent,
-    FileListPageComponent
+    FileListPageComponent,
+    FileListPageSubComponent
   ],
   imports: [
     BrowserModule,

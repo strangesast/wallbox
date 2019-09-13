@@ -2,7 +2,7 @@ import { Component, Injectable, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import { tap, takeUntil, first, pluck, map } from 'rxjs/operators';
-import {PositionRange} from 'wallbox-proto/wallbox_pb';
+import {PositionRange, PlaylistResult} from 'wallbox-proto/wallbox_pb';
 import { WallboxClientService } from '../wallbox-client.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
@@ -14,41 +14,55 @@ export class QueueResolver implements Resolve<any[]> {
   constructor(public service: WallboxClientService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    const call = this.service.client.queuePlaylistInfo(new PositionRange());
-    return Observable.create(observer => call.on('data', d => observer.next(d))).pipe(first());
+    return Observable.create(observer => this.service.client.queuePlaylistInfo(new PositionRange(), {}, (err, data) => {
+      if (err != null) {
+        observer.error(err);
+      } else {
+        observer.next(data);
+        observer.complete();
+      }
+    })).pipe(
+      map((data: PlaylistResult) => ({queue: data.toObject()})),
+    );
   }
 }
 
 @Component({
   selector: 'app-queue-page',
   template: `
-  <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" *ngIf="data$ | async as data">
-    <div class="list-item" *ngFor="let item of data.getItemsList()" cdkDrag>{{item}}</div>
+  <div *ngFor="let item of queue$ | async">
+    <span>{{item.title}}</span>
+    <span>{{item.artist}}</span>
+    <span>{{item.album}}</span>
+    <span>{{item.duration}}</span>
   </div>
+  <pre>{{queue$ | async | json}}</pre>
   `,
   styleUrls: ['./queue-page.component.scss']
 })
-export class QueuePageComponent implements OnDestroy {
+export class QueuePageComponent {
   data = [];
 
-  data$ = this.route.data.pipe(pluck('queue'));
+  data$ = this.route.data.pipe(pluck('data', 'queue'));
 
-  destroyed$ = new Subject();
+  queue$ = this.data$.pipe(map(data => data.itemsList));
 
-  dataSub = this.data$.pipe(
-    takeUntil(this.destroyed$),
-    tap(data => console.log(data)),
-  ).subscribe(data => this.data = data);
+  // destroyed$ = new Subject();
 
-  constructor(public route: ActivatedRoute) { }
+  // dataSub = this.data$.pipe(
+  //   takeUntil(this.destroyed$),
+  //   tap(data => console.log(data)),
+  // ).subscribe(data => this.data = data);
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.data, event.previousIndex, event.currentIndex);
-  }
+  constructor(public route: ActivatedRoute) {}
 
-  ngOnDestroy() {
-    this.destroyed$.next();
-    this.destroyed$.complete();
-  }
+  // drop(event: CdkDragDrop<string[]>) {
+  //   moveItemInArray(this.data, event.previousIndex, event.currentIndex);
+  // }
+
+  // ngOnDestroy() {
+  //   this.destroyed$.next();
+  //   this.destroyed$.complete();
+  // }
 
 }

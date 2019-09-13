@@ -98,6 +98,7 @@ message FileListResult {
     string name = 2;
     string type = 3; // file / directory
     int32 size = 4; // applicable to file, only
+    google.protobuf.Timestamp lastModified = 5;
   }
   repeated FileListItem items = 1;
   int32 count = 2;

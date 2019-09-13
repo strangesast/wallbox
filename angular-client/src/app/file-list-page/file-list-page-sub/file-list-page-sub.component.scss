@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+:host .breadcrumbs {
+  display: flex;
+
+  & > * {
+    & > * {
+      padding: 8px;
+    }
+
+    &:not(:first-child):before {
+      content: '>';
+    }
+  }
+}
