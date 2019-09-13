@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QueuePageComponent } from './queue-page/queue-page.component';
 import { ControlBarComponent } from './control-bar/control-bar.component';
+import { PlaylistsListPageComponent } from './playlists-list-page/playlists-list-page.component';
+import { FileListPageComponent } from './file-list-page/file-list-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QueuePageComponent,
-    ControlBarComponent
+    ControlBarComponent,
+    PlaylistsListPageComponent,
+    FileListPageComponent
   ],
   imports: [
     BrowserModule,

@@ -26,7 +26,9 @@ async def get_connection():
     retry = 0
     while True:
         response = None
+        print('connecting... ({}, {})'.format(MPD_HOST, MPD_PORT))
         async with asyncio.connect(MPD_HOST, MPD_PORT) as stream:
+            print('got connection')
             data = await stream.read(100000)
             response = data and (version := version_re.search(data.decode())) and version.group(1) or None
 
@@ -47,13 +49,26 @@ async def get_connection():
 
 
 async def worker(queue):
-    g = get_connection()
-    await g.asend(None)
     while True:
+        print('worker waiting...')
         command, fut = await queue.get()
-        response = await g.asend(command)
-        fut.set_result(response)
-        queue.task_done()
+        print('got command, waiting for connection: {}:{}'.format(MPD_HOST, MPD_PORT))
+        try:
+            async with asyncio.connect(MPD_HOST, MPD_PORT) as stream:
+                print('got connection')
+                data = await stream.read(100000)
+                response = data and (version := version_re.search(data.decode())) and version.group(1) or None
+                print(f'mpd version {response}')
+
+                await stream.write(command.encode())
+                data = await stream.read(1000000)
+                print('got data', data)
+                response = data.decode()
+
+                fut.set_result(response)
+                queue.task_done()
+        finally:
+            print('connection over')
 
 
 #response_re = re.compile('(?P<end>OK$)|((?P<key>[\w ]+): (?P<value>[\w \.]+)$)', re.M)
@@ -86,7 +101,14 @@ class Wallbox(WallboxBase):
         pass
 
     async def DatabaseListFiles(self, stream):
-        pass
+        request: Uri = await stream.recv_message()
+        #items = [PlaylistItem(position=i, uri=f'/{i}', songName=f'Song File {i}') for i in range(10)]
+        command_response = await self.do_command('listfiles "{}"\n'.format(request.uri))
+        for match in response_re.finditer(command_response):
+            print(match)
+        items = [pb2.FileListResult.FileListItem(uri='/', name='', type='file', size=0) for _ in range(10)] 
+        response = pb2.FileListResult(items=items, count=len(items))
+        await stream.send_message(response)
 
     async def PlaybackNext(self, stream):
         pass
@@ -261,9 +283,12 @@ class Wallbox(WallboxBase):
     async def do_command(self, command: str) -> str:
         if not command.endswith('\n'):
             raise Exception('invalid command (does not end with newline)')
+        print('making request')
         fut = asyncio.get_running_loop().create_future()
         self.queue.put_nowait((command, fut))
+        print('waiting')
         response = await fut
+        print('done!')
         return response
 
 

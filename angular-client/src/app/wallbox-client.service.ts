@@ -5,7 +5,7 @@ import { WallboxClient } from 'wallbox-proto/wallbox_grpc_web_pb';
   providedIn: 'root',
 })
 export class WallboxClientService {
-  public client: WallboxClient = new WallboxClient(window.location.origin, null, null);
+  public client = new WallboxClient(window.location.origin, null, null) as WallboxClient;
 
   constructor() {}
 }
