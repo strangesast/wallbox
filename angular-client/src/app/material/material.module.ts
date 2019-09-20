@@ -5,6 +5,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
 
 
 const modules = [
@@ -13,6 +14,7 @@ const modules = [
   MatProgressBarModule,
   MatButtonModule,
   MatRippleModule,
+  MatTableModule,
 ];
 
 @NgModule({

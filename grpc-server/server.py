@@ -211,7 +211,9 @@ class Wallbox(WallboxBase):
                 if last is None:
                     raise Exception('unexpected response. key out of order')
                 if (v := self.PLAYLIST_ITEM_TYPES.get(key)) is None:
-                    raise Exception(f'unexpected response unknown key "{key}"')
+                    print(f'warning: unexpected response key: "{key}"')
+                    continue
+                    #raise Exception(f'unexpected response unknown key "{key}"')
                 t, akey = v
                 last[akey] = t(value)
         items = list(handle(response))
