@@ -26,7 +26,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
       </ng-container>
       <ng-container matColumnDef="duration">
         <th mat-header-cell *matHeaderCellDef> Duration </th>
-        <td mat-cell *matCellDef="let item"> {{item.duration}} </td>
+        <td mat-cell *matCellDef="let item"> {{item.duration | duration}} </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

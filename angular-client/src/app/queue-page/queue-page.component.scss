@@ -1,16 +1,10 @@
 :host {
-  display: host;
-
-  & > div {
-    display: flex;
-
-    & > * {
-      padding: 8px;
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-shrink: 0;
-    }
-  }
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+}
+:host > table {
+  width: 100%;
 }
 //.list {
 //  width: 500px;

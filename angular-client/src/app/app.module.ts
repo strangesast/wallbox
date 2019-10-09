@@ -11,6 +11,7 @@ import { ControlBarComponent } from './control-bar/control-bar.component';
 import { PlaylistsListPageComponent } from './playlists-list-page/playlists-list-page.component';
 import { FileListPageComponent } from './file-list-page/file-list-page.component';
 import { FileListPageSubComponent } from './file-list-page/file-list-page-sub/file-list-page-sub.component';
+import { DurationPipe } from './duration.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FileListPageSubComponent } from './file-list-page/file-list-page-sub/fi
     ControlBarComponent,
     PlaylistsListPageComponent,
     FileListPageComponent,
-    FileListPageSubComponent
+    FileListPageSubComponent,
+    DurationPipe,
   ],
   imports: [
     BrowserModule,

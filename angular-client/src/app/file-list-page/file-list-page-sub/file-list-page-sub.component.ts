@@ -11,19 +11,32 @@ import { Uri, FileListResult } from 'wallbox-proto/wallbox_pb';
   <div class="breadcrumbs">
     <span *ngFor="let each of breadcrumbs$ | async"><a [routerLink]="each.uri">{{each.text}}</a></span>
   </div>
-  <div *ngIf="files$ | async as files; else loading">
-    <div *ngFor="let item of files.itemsList">
-      <ng-container [ngSwitch]="item.type">
-        <a *ngSwitchCase="'directory'" [routerLink]="['/files', item.uri]">{{item.name}}</a>
-        <span *ngSwitchCase="'file'">{{item.name}}</span>
-      </ng-container>
-    </div>
+  <table mat-table [dataSource]="files$">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let item">
+
+        <ng-container *ngSwitch="item.type">
+        <a [routerLink]="['/files', item.uri]">{{item.name}}</a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--
+  <div *ngFor="let item of files.itemsList">
+    <ng-container [ngSwitch]="item.type">
+      <a *ngSwitchCase="'directory'" [routerLink]="['/files', item.uri]">{{item.name}}</a>
+      <span *ngSwitchCase="'file'">{{item.name}}</span>
+    </ng-container>
   </div>
+  -->
   <ng-template #loading>Loading</ng-template>
   `,
   styleUrls: ['./file-list-page-sub.component.scss']
 })
 export class FileListPageSubComponent implements OnInit {
+  displayedColumns = ['name'];
   url$ = this.route.url.pipe(map(urlSegments => urlSegments.map(seg => seg.path).join('/')));
 
   breadcrumbs$ = this.route.url.pipe(map(urlSegments => [{uri: ['/files'], text: 'Root'}, ...urlSegments.map((seg, i) => ({
@@ -45,7 +58,7 @@ export class FileListPageSubComponent implements OnInit {
       }
       observer.complete();
     }))),
-    map((o: FileListResult) => o.toObject())
+    map((o: FileListResult) => o.getItemsList().map(v => v.toObject())),
   );
 
   constructor(public route: ActivatedRoute, public service: WallboxClientService) { }
