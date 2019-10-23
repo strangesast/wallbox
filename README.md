@@ -1,5 +1,6 @@
 # wallbox
-Project to adapt a 1950's era wall-box jukebox remote to control a Sonos / Google Music / MP3 player output.
+Project to adapt a 1950's era wall-box jukebox remote to control a Sonos / Google Music / MP3 player output.  
+[Google Photos Album](https://photos.app.goo.gl/iEbUDsr8W9gLysSi8)
 
 <a href="https://github.com/strangesast/wallbox/blob/master/models/wallbox.stl"><img src="https://raw.githubusercontent.com/strangesast/wallbox/master/images/wallbox.png" height="500"/></a>
 
