@@ -17,7 +17,8 @@ import { Uri, FileListResult } from 'wallbox-proto/wallbox_pb';
       <td mat-cell *matCellDef="let item">
 
         <ng-container *ngSwitch="item.type">
-        <a [routerLink]="['/files', item.uri]">{{item.name}}</a>
+          <a [routerLink]="['/files', item.uri]">{{item.name}}</a>
+        </ng-container>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
