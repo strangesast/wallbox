@@ -12,12 +12,12 @@ export class DurationPipe implements PipeTransform {
     value = value - minutes * 60;
     const seconds = value;
     let str = '';
-    if (hours) {
+    if (hours > 0) {
       str += hours + ':' + ('0' + minutes).slice(-2) + ':';
     } else { // if (minutes) { // kinda weird only showing seconds
       str += minutes + ':';
     }
-    str += ('0' + seconds.toFixed(2)).slice(-5);
+    str += ('0' + seconds.toFixed(0)).slice(-2);
     return str;
   }
 

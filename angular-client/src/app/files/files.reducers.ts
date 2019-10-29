@@ -17,6 +17,8 @@ const _reducer = createReducer(initialState,
   on(filesActions.updateURIComplete, (state, {results}) => ({...state, fileListPending: false, fileList: results})),
 );
 
-export function filesReducer(state, action) {
+export function reducer(state, action) {
   return _reducer(state, action);
 }
+
+export const featureKey = 'files';

@@ -3,6 +3,11 @@ syntax = "proto3";
 import "google/protobuf/api.proto";
 import "google/protobuf/timestamp.proto";
 
+service WallboxApi {
+  rpc Search(SearchParameters) returns (SearchResultItemList) {}
+  rpc GetFilesAtURI(Uri) returns (FileListResult) {}
+}
+
 service Wallbox {
   // returns previous temps (if any) in date range, streams further temps
   // if enddate is greater than now or undefined
@@ -86,6 +91,24 @@ service Wallbox {
 
   // Removes tags from the specified song. If TAG is not specified, then all tag values will be removed. Editing song tags is only possible for remote songs.
   rpc QueueClearTagId(IdTag) returns (Empty) {}
+}
+
+message SearchParameters {
+  string search = 1;
+  string sort = 2; // key:direction or direction
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message SearchResultItemList {
+  message SearchResultItem {
+    string uri = 1;
+    string name = 2;
+    string type = 3; // playlist / file / directory ?
+    int32 duration = 4;
+  }
+  repeated SearchResultItemList items = 1;
+  int32 count = 2;
 }
 
 message Uri {

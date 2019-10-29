@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +13,8 @@ import { ControlBarComponent } from './control-bar/control-bar.component';
 import { PlaylistsListPageComponent } from './playlists-list-page/playlists-list-page.component';
 import { FileListPageComponent } from './file-list-page/file-list-page.component';
 import { FileListPageSubComponent } from './file-list-page/file-list-page-sub/file-list-page-sub.component';
-import { DurationPipe } from './duration.pipe';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,6 @@ import { DurationPipe } from './duration.pipe';
     PlaylistsListPageComponent,
     FileListPageComponent,
     FileListPageSubComponent,
-    DurationPipe,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,9 @@ import { DurationPipe } from './duration.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    SharedModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

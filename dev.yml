@@ -18,5 +18,5 @@ services:
       - /dev/snd
     volumes:
       #- "/home/samuel/Music:/var/lib/mpd/music"
-      #- "/mnt/c/TorrentFiles/music/:/var/lib/mpd/music"
-      - "./music:/var/lib/mpd/music"
+      - "/mnt/c/TorrentFiles/music/:/var/lib/mpd/music"
+      #- "./music:/var/lib/mpd/music"

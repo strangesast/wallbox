@@ -6,13 +6,16 @@ import {PlaylistsListPageComponent, PlaylistsListResolver} from './playlists-lis
 import {FileListResolver, FileListPageComponent} from './file-list-page/file-list-page.component';
 import {FileListPageSubComponent} from './file-list-page/file-list-page-sub/file-list-page-sub.component';
 
-const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: '/queue'},
-  {path: 'files', component: FileListPageComponent, children: [
-    {path: '**', component: FileListPageSubComponent, resolve: {data: FileListResolver}},
-  ]},
-  {path: 'playlists', resolve: {data: PlaylistsListResolver}, component: PlaylistsListPageComponent},
-  {path: 'queue', resolve: {}, component: QueuePageComponent},
+// const routes: Routes = [
+//   {path: '', pathMatch: 'full', redirectTo: '/queue'},
+//   {path: 'files', component: FileListPageComponent, children: [
+//     {path: '**', component: FileListPageSubComponent, resolve: {data: FileListResolver}},
+//   ]},
+//   {path: 'playlists', resolve: {data: PlaylistsListResolver}, component: PlaylistsListPageComponent},
+//   {path: 'queue', resolve: {}, component: QueuePageComponent},
+// ];
+const routes = [
+  { path: 'files', loadChildren:  () => import('./files/files.module').then(mod => mod.FilesModule) },
 ];
 
 @NgModule({
