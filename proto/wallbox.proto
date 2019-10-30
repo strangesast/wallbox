@@ -94,7 +94,7 @@ service Wallbox {
 }
 
 message SearchParameters {
-  string search = 1;
+  string query = 1;
   string sort = 2; // key:direction or direction
   int32 limit = 3;
   int32 offset = 4;
@@ -107,7 +107,7 @@ message SearchResultItemList {
     string type = 3; // playlist / file / directory ?
     int32 duration = 4;
   }
-  repeated SearchResultItemList items = 1;
+  repeated SearchResultItem items = 1;
   int32 count = 2;
 }
 

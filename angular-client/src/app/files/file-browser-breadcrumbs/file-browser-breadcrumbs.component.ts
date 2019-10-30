@@ -18,7 +18,7 @@ import { Component, OnInit } from '@angular/core';
     display: flex;
   }
   :host > div > a, :host > div > span {
-    padding: 12px;
+    padding: 8px;
     white-space: nowrap;
     overflow: ellipsis;
   }

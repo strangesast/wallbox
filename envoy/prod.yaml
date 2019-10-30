@@ -19,7 +19,7 @@ static_resources:
               - "*"
               routes:
               - match:
-                  prefix: "/Wallbox"
+                  prefix: "/WallboxApi"
                   # grpc: {}
                 route:
                   cluster: server

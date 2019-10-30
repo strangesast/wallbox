@@ -21,6 +21,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     background: #fafafa;
     font-size: 1.2em;
     padding: 8px 40px 8px 8px;
+    margin: 4px 0;
     grid-row: 1 / 2;
     grid-column: 1 / 3;
     outline: none;

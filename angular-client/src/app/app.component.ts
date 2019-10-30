@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Empty, StatusResult } from 'wallbox-proto/wallbox_pb';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -43,9 +44,13 @@ import { map } from 'rxjs/operators';
     list-style-type: none;
     display: flex;
     padding-left: 0;
+    margin: 0;
+  }
+  :host > .content > header > nav > ul > li {
   }
   :host > .content > header > nav > ul > li > a {
-    padding: 12px;
+    padding: 8px;
+    display: block;
   }
   :host > .content {
     flex-grow: 1;
@@ -60,7 +65,7 @@ export class AppComponent {
   // error$;
   // status$;
 
-  constructor() {
+  constructor(public router: Router) {
 
     /*
     console.log(client);
@@ -89,6 +94,6 @@ export class AppComponent {
   }
 
   onSearch($event) {
-    console.log($event);
+    this.router.navigate(['/search'], { queryParams: { q: $event } });
   }
 }

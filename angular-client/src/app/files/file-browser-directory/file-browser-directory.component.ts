@@ -40,7 +40,6 @@ function sortBy(keys) {
           <button mat-menu-item>Item 1</button>
           <button mat-menu-item>Item 2</button>
         </mat-menu>
-
       </ng-container>
     </ng-container>
   </div>
@@ -55,8 +54,12 @@ function sortBy(keys) {
     align-items: center;
     height: 48px;
   }
-  :host > div > span, :host > div > mat-icon {
-    padding: 0 8px 0 8px;
+  :host > div:hover {
+    background: #fafafa;
+  }
+  :host > div > span,
+  :host > div > mat-icon {
+    padding: 0 8px;
   }
   :host > div > span.name {
     flex-grow: 1;

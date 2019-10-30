@@ -55,11 +55,12 @@ RUN cd Python-3.7.4 && \
 
 RUN python3.7 -m pip install meson
 
-RUN wget https://www.musicpd.org/download/mpd/0.21/mpd-0.21.14.tar.xz
+#RUN wget https://www.musicpd.org/download/mpd/0.21/mpd-0.21.14.tar.xz
+RUN wget https://www.musicpd.org/download/mpd/0.21/mpd-0.21.16.tar.xz
 
-RUN tar -xf mpd-0.21.14.tar.xz
+RUN tar -xf mpd-0.21.16.tar.xz
 
-RUN cd /tmp/mpd-0.21.14 && \
+RUN cd /tmp/mpd-0.21.16 && \
   meson . output/release --buildtype=debugoptimized -Db_ndebug=true && \
   ninja -C output/release && \
   ninja -C output/release install
