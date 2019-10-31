@@ -39,21 +39,22 @@ RUN apt-get update && apt-get install -y \
   libgdbm-dev \
   libc6-dev \
   libbz2-dev \
-  ninja-build
+  ninja-build \
+  liblzma-dev
 
 WORKDIR /tmp
 
-RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
+RUN wget https://github.com/python/cpython/archive/v3.8.0.tar.gz
 
-RUN tar -xf Python-3.7.4.tar.xz && \
-  cd Python-3.7.4 && \
+RUN tar -xf v3.8.0.tar.gz && \
+  cd cpython-3.8.0 && \
   ./configure --enable-optimizations
 
-RUN cd Python-3.7.4 && \
+RUN cd cpython-3.8.0 && \
   make -j 8 && \
   make altinstall
 
-RUN python3.7 -m pip install meson
+RUN python3.8 -m pip install meson
 
 #RUN wget https://www.musicpd.org/download/mpd/0.21/mpd-0.21.14.tar.xz
 RUN wget https://www.musicpd.org/download/mpd/0.21/mpd-0.21.16.tar.xz
