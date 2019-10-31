@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-file-browser-breadcrumbs',
@@ -30,11 +30,14 @@ import { Component, OnInit } from '@angular/core';
   `]
 })
 export class FileBrowserBreadcrumbsComponent implements OnInit {
-  items = ['one', 'two', 'three'].reduce((acc, name) => {
-    const uri = (acc.length > 0 ? acc[acc.length - 1].uri : []).concat(name);
-    acc.push({uri, name});
-    return acc;
-  }, []);
+  @Input()
+  items = [];
+
+  // items = ['one', 'two', 'three'].reduce((acc, name) => {
+  //   const uri = (acc.length > 0 ? acc[acc.length - 1].uri : []).concat(name);
+  //   acc.push({uri, name});
+  //   return acc;
+  // }, []);
 
   constructor() { }
 

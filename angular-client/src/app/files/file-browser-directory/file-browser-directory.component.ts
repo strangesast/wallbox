@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 function sortBy(keys) {
   return (a, b) => {
@@ -14,9 +17,9 @@ function sortBy(keys) {
 @Component({
   selector: 'app-file-browser-directory',
   template: `
-  <div *ngFor="let item of items" tabindex="0">
+  <div *ngFor="let item of items$ | async" tabindex="0">
     <ng-container [ngSwitch]="item.type">
-      <ng-container *ngSwitchCase="'directory'">
+      <div *ngSwitchCase="'directory'" (dblclick)="updateURI(item.uri)">
         <mat-icon>folder</mat-icon>
         <span class="name">{{ item.name }}</span>
         <button mat-icon-button aria-label="Options" [matMenuTriggerFor]="itemMenu">
@@ -26,10 +29,10 @@ function sortBy(keys) {
           <button mat-menu-item>Item 1</button>
           <button mat-menu-item>Item 2</button>
         </mat-menu>
-      </ng-container>
-      <ng-container *ngSwitchCase="'file'">
+      </div>
+      <div *ngSwitchCase="'file'">
         <mat-icon>music_note</mat-icon>
-        <span class="name">{{ item.title }}</span>
+        <span class="name">{{ item.name }}</span>
         <span class="name">{{ item.album }}</span>
         <span class="name">{{ item.artist }}</span>
         <span class="duration">{{ item.duration | duration }}</span>
@@ -40,7 +43,7 @@ function sortBy(keys) {
           <button mat-menu-item>Item 1</button>
           <button mat-menu-item>Item 2</button>
         </mat-menu>
-      </ng-container>
+      </div>
     </ng-container>
   </div>
   `,
@@ -49,45 +52,57 @@ function sortBy(keys) {
     display: flex;
     flex-direction: column;
   }
-  :host > div {
+  :host > div > div {
     display: flex;
     align-items: center;
     height: 48px;
+    cursor: pointer;
   }
-  :host > div:hover {
+  :host > div > div:hover {
     background: #fafafa;
   }
-  :host > div > span,
-  :host > div > mat-icon {
+  :host > div > div > span,
+  :host > div > div > mat-icon {
     padding: 0 8px;
   }
-  :host > div > span.name {
+  :host > div > div > span.name {
     flex-grow: 1;
   }
   `],
 })
 export class FileBrowserDirectoryComponent implements OnInit {
-  items = Array.from(Array(10), (_, i) => {
-    const type = Math.random() > 0.5 ? 'directory' : 'file';
-    const duration = 120 * Math.random();
-    if (type === 'directory') {
-      return {
-        type,
-        duration,
-        name: `Item ${i + 1}`,
-      };
-    } else {
-      return {
-        type,
-        duration,
-        title: `Song ${i + 1}`,
-        album: `Album ${i + 1}`,
-        artist: `Artist ${i + 1}`,
-      };
-    }
-  }).sort(sortBy(['type', 'name']));
+  items$ = this.store.pipe(
+    select('files'),
+    select('fileList'),
+    map(v => v.map(b => ({uri: b.getUri(), name: b.getName(), type: b.getType()})).sort(sortBy(['type', 'name'])))
+  );
 
-  constructor() { }
+  // items = Array.from(Array(10), (_, i) => {
+  //   const type = Math.random() > 0.5 ? 'directory' : 'file';
+  //   const duration = 120 * Math.random();
+  //   if (type === 'directory') {
+  //     const name = `Item ${i + 1}`;
+  //     const uri = name.toLowerCase().replace(' ', '_');
+  //     return { type, uri, duration, name };
+  //   } else {
+  //     return {
+  //       type,
+  //       duration,
+  //       title: `Song ${i + 1}`,
+  //       album: `Album ${i + 1}`,
+  //       artist: `Artist ${i + 1}`,
+  //     };
+  //   }
+  // }).sort(sortBy(['type', 'name']));
+
+  constructor(
+    public router: Router,
+    public store: Store<{files: any}>,
+  ) { }
+
+  updateURI(uri: string) {
+    this.router.navigate(['/files', uri]);
+  }
 
   ngOnInit() {
   }

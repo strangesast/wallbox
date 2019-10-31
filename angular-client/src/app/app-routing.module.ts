@@ -17,6 +17,8 @@ import {FileListPageSubComponent} from './file-list-page/file-list-page-sub/file
 const routes = [
   { path: 'files', loadChildren:  () => import('./files/files.module').then(mod => mod.FilesModule) },
   { path: 'search', loadChildren:  () => import('./search/search.module').then(mod => mod.SearchModule) },
+  { path: 'playlists', loadChildren:  () => import('./playlists/playlists.module').then(mod => mod.PlaylistsModule) },
+  { path: 'queue', loadChildren:  () => import('./queue/queue.module').then(mod => mod.QueueModule) },
 ];
 
 @NgModule({

@@ -7,22 +7,29 @@ from wallbox_grpc import WallboxApiBase
 import wallbox_pb2 as pb
 
 
+keyvalue_re = re.compile('^([\S]+):\s([\S\s]+)$')
+
 class WallboxApi(WallboxApiBase):
     def __init__(self, queue):
         self.queue = queue
+
+    async def execute(self, command):
+        fut = asyncio.get_running_loop().create_future()
+        await self.queue.put((command, fut));
+        result = await fut
+        return result
+
 
     async def Search(self, stream):
         request: pb.SearchParameters = await stream.recv_message()
         fut = asyncio.get_running_loop().create_future()
         command = f'search \"(Title contains \\\"{request.query}\\\")\"\n'
-        await self.queue.put((command, fut));
-        lines = await fut
-        r = re.compile('^([\S]+):\s([\S\s]+)$')
+        lines = await self.execute(command)
 
         items = []
         last = None
         for line in lines:
-            if (match := r.match(line)):
+            if (match := keyvalue_re.match(line)):
                 key, value = match.groups()
                 if key == 'file':
                     last = {}
@@ -35,9 +42,23 @@ class WallboxApi(WallboxApiBase):
 
     async def GetFilesAtURI(self, stream):
         request: Uri = await stream.recv_message()
-        print(request)
+        uri = request.uri
+        command = f'listfiles \"{uri}\"\n'
+        lines = await self.execute(command)
+
         items = []
-        await stream.send_message(pb.FileListResult(items=items, length=len(items)))
+        last = None
+        for line in lines:
+            if (match := keyvalue_re.match(line)):
+                key, value = match.groups()
+                if key == 'file' or key == 'directory':
+                    last = {}
+                    last['type'] = key
+                    items.append(last)
+                    key = 'uri'
+                last[key] = value
+        items = [pb.FileListResult.FileListItem(uri=(f'{uri}/' if uri != '' else '') + item['uri'], name=item['uri'], type=item['type']) for item in items]
+        await stream.send_message(pb.FileListResult(items=items, count=len(items)))
 
 
 async def worker(queue):

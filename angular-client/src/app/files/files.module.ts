@@ -12,11 +12,12 @@ import { FileBrowserContainerComponent } from './file-browser-container/file-bro
 import { FileBrowserBreadcrumbsComponent } from './file-browser-breadcrumbs/file-browser-breadcrumbs.component';
 import { FileBrowserDirectoryComponent } from './file-browser-directory/file-browser-directory.component';
 import { SharedModule } from '../shared/shared.module';
+import { FilesService } from './files.service';
 
 
 const routes: Routes = [
   { path: '', component: FileBrowserContainerComponent, children: [
-    {path: '**', component: FileBrowserDirectoryComponent},
+    {path: '**', component: FileBrowserDirectoryComponent, canActivate: [FilesService]},
   ]},
 ];
 
