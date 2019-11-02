@@ -60,38 +60,7 @@ import { map } from 'rxjs/operators';
   // styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // data$: Observable<StatusResult>;
-  // dataRepr$: Observable<{}>;
-  // error$;
-  // status$;
-
-  constructor(public router: Router) {
-
-    /*
-    console.log(client);
-    const call = client.stats(new Empty(), {});
-    // const call = client.getStatus(new Empty(), {});
-
-    this.data$ = Observable.create(observer => {
-      call.on('data', obj => observer.next(obj as StatusResult));
-      call.on('error', e => observer.error(e));
-      call.on('end', () => observer.complete());
-    });
-
-    this.dataRepr$ = this.data$.pipe(
-      map(data => data || data.toObject()),
-    );
-
-    this.status$ = Observable.create(observer => {
-      call.on('status', s => observer.next(s));
-    });
-
-    this.error$ = Observable.create(observer => {
-      call.on('error', err => observer.next(err));
-    });
-    call.on('end', () => console.log('end'));
-    */
-  }
+  constructor(public router: Router) {}
 
   onSearch($event) {
     this.router.navigate(['/search'], { queryParams: { q: $event } });

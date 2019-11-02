@@ -9,10 +9,17 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SearchService } from './search.service';
+import * as searchReducer from './search.reducers';
+import { SearchEffects } from './search.effects';
 
 
 const routes: Routes = [
-  { path: '', component: SearchResultsComponent },
+  {
+    path: '',
+    canActivate: [SearchService],
+    component: SearchResultsComponent,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange'
+  },
 ];
 
 @NgModule({
@@ -23,8 +30,8 @@ const routes: Routes = [
     HttpClientModule,
     SharedModule,
     RouterModule.forChild(routes),
-    // StoreModule.forFeature(searchReducer.featureKey, searchReducer.reducer),
-    // EffectsModule.forFeature([SearchEffects]),
+    StoreModule.forFeature(searchReducer.featureKey, searchReducer.reducer),
+    EffectsModule.forFeature([SearchEffects]),
   ],
   providers: [
     SearchService,

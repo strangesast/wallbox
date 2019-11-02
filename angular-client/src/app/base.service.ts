@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WallboxApiClient } from 'wallbox-proto/wallbox_grpc_web_pb';
 
+
 @Injectable({
   providedIn: 'root',
 })

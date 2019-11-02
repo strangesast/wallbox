@@ -4,7 +4,16 @@ import "google/protobuf/api.proto";
 import "google/protobuf/timestamp.proto";
 
 service WallboxApi {
-  rpc Search(SearchParameters) returns (SearchResultItemList) {}
+  rpc Play(Empty) returns (Empty) {}
+  rpc Toggle(Empty) returns (Empty) {}
+  rpc Pause(Empty) returns (Empty) {}
+  rpc Next(Empty) returns (Empty) {}
+  rpc Previous(Empty) returns (Empty) {}
+  rpc Stop(Empty) returns (Empty) {}
+  rpc Status(Empty) returns (StatusResult) {}
+  rpc QueueAdd(Uri) returns (Empty) {}
+  rpc QueueGetAll(Empty) returns (PlaylistResult) {}
+  rpc Search(SearchParameters) returns (stream SearchResultItem) {}
   rpc GetFilesAtURI(Uri) returns (FileListResult) {}
 }
 
@@ -100,13 +109,24 @@ message SearchParameters {
   int32 offset = 4;
 }
 
+message SearchResultItem {
+  string uri = 1;
+  string type = 2; // playlist / file / directory ?
+  google.protobuf.Timestamp lastModified = 3;
+  string format = 4;
+  int32 time = 5;
+  float duration = 6;
+  string artist = 7;
+  string title = 8;
+  string album = 9;
+  string track = 10;
+  string date = 11;
+  string genre = 12;
+  string composer = 13;
+  string disc = 14;
+}
+
 message SearchResultItemList {
-  message SearchResultItem {
-    string uri = 1;
-    string name = 2;
-    string type = 3; // playlist / file / directory ?
-    int32 duration = 4;
-  }
   repeated SearchResultItem items = 1;
   int32 count = 2;
 }
@@ -147,18 +167,18 @@ message SongInfo {
 
 message PlaylistResult {
   message PlaylistItem {
-    int32 id = 1;
-    int32 position = 2;
-    string filename = 3;
-    google.protobuf.Timestamp lastModified = 4;
-    string artist = 5;
-    string title = 6;
-    string album = 7;
+    string uri = 1;
+    int32 id = 2;
+    int32 pos = 3;
+    google.protobuf.Timestamp lastModified = 5;
+    string artist = 6;
+    string title = 7;
+    string album = 8;
     int32 time = 9;
     float duration = 10;
     string genre = 11;
     string date = 12;
-    int32 track = 13;
+    string track = 13;
   }
   repeated PlaylistItem items = 1;
   int32 count = 2;
@@ -178,9 +198,9 @@ message StatusResult {
   int32 songid = 10; // playlist songid of the current song stopped on or playing
   int32 nextsong = 11; // playlist song number of the next song to be played
   int32 nextsongid = 12; // playlist songid of the next song to be played
-  int32 time = 13; // total time elapsed (of current playing/paused song) in seconds (deprecated, use elapsed instead)
-  int32 elapsed = 14; // Total time elapsed within the current song in seconds, but with higher resolution.
-  int32 duration = 15; // Duration of the current song in seconds.
+  string time = 13; // total time elapsed (of current playing/paused song) in seconds (deprecated, use elapsed instead)
+  float elapsed = 14; // Total time elapsed within the current song in seconds, but with higher resolution.
+  float duration = 15; // Duration of the current song in seconds.
   int32 bitrate = 16; // instantaneous bitrate in kbps
   int32 xfade = 17; // crossfade in seconds
   float mixrampdb = 18; // mixramp threshold in dB

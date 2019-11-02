@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 import { of } from 'rxjs';
 
 @Component({
@@ -9,7 +10,17 @@ import { of } from 'rxjs';
       <div class="message" *ngIf="queue.length == 0">Nothing in queue.</div>
       <div class="table">
         <div *ngFor="let song of queue" tabindex="0">
-          <span class="name">{{song.name}}</span>
+          <span>{{song.getPos() + 1}}</span>
+          <span class="name">{{song.getTitle()}}</span>
+          <span class="name">{{song.getArtist()}}</span>
+          <span>{{song.getDuration() | duration}}</span>
+          <button mat-icon-button aria-label="Options" [matMenuTriggerFor]="itemMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #itemMenu xPosition="before">
+            <button mat-menu-item>Remove</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
         </div>
       </div>
     </div>
@@ -40,6 +51,10 @@ import { of } from 'rxjs';
   }
   :host > .container .table > div > span.name {
     flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-basis: 0;
   }
   :host > .container .message {
     padding: 8px;
@@ -47,11 +62,13 @@ import { of } from 'rxjs';
   `],
 })
 export class QueueListComponent implements OnInit {
-  queue$ = of(Array.from(Array(10), (_, i) => ({
-    name: `Song ${i + 1}`,
-  })));
+  queue$ = this.store.pipe(select('queue', 'queue'));
 
-  constructor() { }
+  // queue$ = of(Array.from(Array(10), (_, i) => ({
+  //   name: `Song ${i + 1}`,
+  // })));
+
+  constructor(public store: Store<{queue: any}>) { }
 
   ngOnInit() {
   }
