@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { of } from 'rxjs';
 
+import { StatusService } from '../../status.service';
+
 @Component({
   selector: 'app-queue-list',
   template: `
@@ -9,7 +11,7 @@ import { of } from 'rxjs';
     <div *ngIf="queue$ | async as queue; else loading">
       <div class="message" *ngIf="queue.length == 0">Nothing in queue.</div>
       <div class="table">
-        <div *ngFor="let song of queue" tabindex="0">
+        <div *ngFor="let song of queue" tabindex="0" (dblclick)="play(song.getPos())">
           <span>{{song.getPos() + 1}}</span>
           <span class="name">{{song.getTitle()}}</span>
           <span class="name">{{song.getArtist()}}</span>
@@ -68,9 +70,16 @@ export class QueueListComponent implements OnInit {
   //   name: `Song ${i + 1}`,
   // })));
 
-  constructor(public store: Store<{queue: any}>) { }
+  constructor(
+    public store: Store<{queue: any}>,
+    public service: StatusService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  play(pos) {
+    this.service.play(pos);
   }
 
 }

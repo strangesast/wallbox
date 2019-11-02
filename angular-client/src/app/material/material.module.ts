@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 const modules = [
@@ -17,6 +18,7 @@ const modules = [
   MatRippleModule,
   MatTableModule,
   MatMenuModule,
+  MatSliderModule,
 ];
 
 @NgModule({

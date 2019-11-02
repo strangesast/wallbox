@@ -107,11 +107,6 @@ export class SearchResultsComponent {
   ) {}
 
   addToQueue(uri) {
-    console.log('adding...', uri);
-    this.queue.add(uri).subscribe(
-      () => {},
-      err => console.log('error', err),
-      () => console.log('complete'),
-    );
+    this.queue.add(uri).subscribe(null, null, () => console.log('complete'));
   }
 }

@@ -4,7 +4,7 @@ import "google/protobuf/api.proto";
 import "google/protobuf/timestamp.proto";
 
 service WallboxApi {
-  rpc Play(Empty) returns (Empty) {}
+  rpc Play(QueueSong) returns (Empty) {}
   rpc Toggle(Empty) returns (Empty) {}
   rpc Pause(Empty) returns (Empty) {}
   rpc Next(Empty) returns (Empty) {}
@@ -233,6 +233,23 @@ message PlaylistChanges {
   repeated PlaylistChange changes = 1;
   int32 count = 2;
   int32 offset = 3;
+}
+
+message QueueSong {
+  // song id / position in queue
+  oneof ident {
+    int32 pos = 1;
+    int32 id = 2;
+  }
+}
+
+message QueueSongSeek {
+  // song id / position in queue
+  oneof ident {
+    int32 pos = 1;
+    int32 id = 2;
+  }
+  float time = 3; // seek
 }
 
 message QueuePositionList {

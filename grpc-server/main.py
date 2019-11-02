@@ -33,7 +33,11 @@ class WallboxApi(WallboxApiBase):
         await stream.send_message(pb.Empty())
 
     async def Play(self, stream: Stream[pb.Empty, pb.Empty]):
-        await self.client.play(0);
+        request = await stream.recv_message()
+        if request.HasField('id'):
+            await self.client.playid(request.id)
+        else:
+            await self.client.play(request.pos)
         await stream.send_message(pb.Empty())
 
     async def Pause(self, stream: Stream[pb.Empty, pb.Empty]):
@@ -84,21 +88,21 @@ class WallboxApi(WallboxApiBase):
     async def Status(self, stream: Stream[pb.Empty, pb.StatusResult]):
         await stream.recv_message()
         status = await self.client.status()
-        status['volume'] = int(status.pop('volume'))
-        status['repeat'] = int(status.pop('repeat'))
-        status['random'] = int(status.pop('random'))
-        status['consume'] = int(status.pop('consume'))
-        status['single'] = int(status.pop('single'))
-        status['song'] = int(status.pop('song'))
-        status['songid'] = int(status.pop('songid'))
-        status['nextsong'] = int(status.pop('nextsong'))
-        status['nextsongid'] = int(status.pop('nextsongid'))
-        status['playlist'] = int(status.pop('playlist'))
-        status['playlistlength'] = int(status.pop('playlistlength'))
-        status['mixrampdb'] = float(status.pop('mixrampdb'))
-        status['elapsed'] = float(status.pop('elapsed'))
-        status['bitrate'] = int(status.pop('bitrate'))
-        status['duration'] = float(status.pop('duration'))
+        status['volume'] = int(status.pop('volume', '0'))
+        status['repeat'] = int(status.pop('repeat', '0'))
+        status['random'] = int(status.pop('random', '0'))
+        status['consume'] = int(status.pop('consume', '0'))
+        status['single'] = int(status.pop('single', '0'))
+        status['song'] = int(status.pop('song', '0'))
+        status['songid'] = int(status.pop('songid', '0'))
+        status['nextsong'] = int(status.pop('nextsong', '0'))
+        status['nextsongid'] = int(status.pop('nextsongid', '0'))
+        status['playlist'] = int(status.pop('playlist', '0'))
+        status['playlistlength'] = int(status.pop('playlistlength', '0'))
+        status['mixrampdb'] = float(status.pop('mixrampdb', '0'))
+        status['elapsed'] = float(status.pop('elapsed', '0'))
+        status['bitrate'] = int(status.pop('bitrate', '0'))
+        status['duration'] = float(status.pop('duration', '0'))
         await stream.send_message(pb.StatusResult(**status))
 
     async def Search(self, stream: Stream[pb.SearchParameters, pb.SearchResultItem]):

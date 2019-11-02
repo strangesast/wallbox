@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from './base.service';
+import { QueueSong } from 'wallbox-proto/wallbox_grpc_web_pb';
 
 import { wrapUnaryUnary } from './utils';
 
@@ -7,8 +8,18 @@ import { wrapUnaryUnary } from './utils';
   providedIn: 'root',
 })
 export class StatusService {
-  play() {
-    wrapUnaryUnary((this.base as any).play.bind(this.base)).subscribe(null, null, () => console.log('complete'));
+  play(pos = 0) {
+    const arg = new QueueSong();
+    arg.setPos(pos);
+    this._play(arg).subscribe(null, null, () => console.log('complete'));
+  }
+  playid(id = 0) {
+    const arg = new QueueSong();
+    arg.setId(id);
+    this._play(arg).subscribe(null, null, () => console.log('complete'));
+  }
+  _play(arg) {
+    return wrapUnaryUnary((this.base as any).play.bind(this.base), arg);
   }
   toggle() {
     wrapUnaryUnary((this.base as any).toggle.bind(this.base)).subscribe(null, null, () => console.log('complete'));
