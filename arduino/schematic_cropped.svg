@@ -1,0 +1,575 @@
+<svg id="svg2978" width="973.87" height="231.06" version="1.1" viewBox="-10 -10 973.87 231.06" xmlns="http://www.w3.org/2000/svg">
+ <style id="style1912" type="text/css">#g1 circle.pindot {fill: none;stroke: none;}#g1 rect, #g1 circle, #g1 ellipse, #g1 polyline, #g1 line, #g1 polygon, #g1 path {shape-rendering: crispEdges;}path, polyline, polygon {stroke-linejoin:round;}
+rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges;}</style>
+ <g id="g1" transform="translate(-104.5 -160.05)" c_para="Prefix Start`1`" c_portOfADImportHack="" c_spiceCmd="null" c_transformList="" importFlag="0">
+  <g id="element-b0" c_etype="pinpart" c_origin="265,235" c_para="package`BRIDGE-WOB`BOM_Supplier`LCSC`BOM_Manufacturer`MDD`BOM_Manufacturer Part`2W10`image`//image.lceda.cn/szlcsc/C3064.jpg`BOM_Supplier Part`C3064`spicePre`D`" c_partid="part_import_gge59" c_shapetype="group">
+   <g id="gge61" c_partid="part_annotation">
+    <text id="text2024" x="233" y="200" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">2W005G</text>
+   </g>
+   <g id="gge63" c_partid="part_annotation">
+    <text id="text2027" x="233" y="191.65625" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">D1</text>
+   </g>
+   <g id="gge65" c_elec="0" c_etype="pinpart" c_origin="235,235" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="4">
+    <circle id="circle2030" class="pindot" cx="235" cy="235" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2032" d="m235 235h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2034" x="248" y="238" fill="#0000ff" font-family="Verdana" font-size="9.3333px">-</text>
+    <text id="text2036" x="239" y="234" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">4</text>
+    <circle id="circle2038" cx="242" cy="235" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2040" d="m245 238 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge72" c_elec="0" c_etype="pinpart" c_origin="265,205" c_partid="part_pin" c_rotation="90" c_show="show" c_spicepin="1">
+    <circle id="circle2043" class="pindot" cx="265" cy="205" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2045" d="m265 205v10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2047" transform="rotate(-90,268,218)" x="268" y="218" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">~</text>
+    <text id="text2049" transform="rotate(-90,264,209)" x="264" y="209" fill="#0000ff" font-family="Verdana" font-size="9.3333px">1</text>
+    <circle id="circle2051" cx="265" cy="212" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2053" d="m262 215 3 3 3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge79" c_elec="0" c_etype="pinpart" c_origin="295,235" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="2">
+    <circle id="circle2056" class="pindot" cx="295" cy="235" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2058" d="m295 235h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2060" x="282" y="238" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">+</text>
+    <text id="text2062" x="291" y="234" fill="#0000ff" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2064" cx="288" cy="235" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2066" d="m285 232-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge86" c_elec="0" c_etype="pinpart" c_origin="265,265" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="3">
+    <circle id="circle2069" class="pindot" cx="265" cy="265" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2071" d="m265 265v-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2073" transform="rotate(-90,268,252)" x="268" y="252" fill="#0000ff" font-family="Verdana" font-size="9.3333px">~</text>
+    <text id="text2075" transform="rotate(-90,264,261)" x="264" y="261" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">3</text>
+    <circle id="circle2077" cx="265" cy="258" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2079" d="m268 255-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge93" points="265 215 245 235 265 255 285 235 265 215"/>
+    <polyline id="gge94" points="254 218 262 226"/>
+    <polyline id="gge95" points="282 224 274 232"/>
+    <polyline id="gge96" points="262 244 254 252"/>
+    <polyline id="gge97" points="274 238 282 246"/>
+    <polygon id="gge98" points="256 232 248 224 258 222"/>
+    <polygon id="gge99" points="268 226 276 218 278 228"/>
+    <polygon id="gge100" points="248 246 256 238 258 248"/>
+    <polygon id="gge101" points="276 252 268 244 278 242"/>
+   </g>
+  </g>
+  <g id="element-a0" c_etype="pinpart" c_origin="110,240" c_para="package`HDR-1X2/2.54`BOM_Supplier`LCSC`BOM_Manufacturer`BOOMELE`BOM_Manufacturer Part`2.54-1*2PFemale`image`//image.lceda.cn/szlcsc/C49661.jpg`BOM_Supplier Part`C49661`spicePre`P`" c_partid="part_import_gge146" c_rotation="180" c_shapetype="group">
+   <g id="gge148" c_partid="part_annotation">
+    <text id="text2092" x="105.28125" y="222" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">2PIN CON</text>
+   </g>
+   <g id="gge150" c_partid="part_annotation">
+    <text id="text2095" x="105.28906" y="213" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">P1</text>
+   </g>
+   <rect id="gge152" x="95" y="225" width="20" height="30" rx="2" ry="2" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+   <g id="gge153" c_elec="1" c_etype="pinpart" c_origin="125,245" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="1">
+    <circle id="circle2099" class="pindot" cx="125" cy="245" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2101" d="m125 245h-10" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+    <text id="text2103" x="110" y="248" fill="#000000" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <text id="text2105" x="115" y="244" display="none" fill="#000000" font-family="Verdana" font-size="9.3333px">1</text>
+    <circle id="circle2107" cx="118" cy="245" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000"/>
+    <path id="path2109" d="m115 242-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+   </g>
+   <g id="gge160" c_elec="1" c_etype="pinpart" c_origin="125,235" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="2">
+    <circle id="circle2112" class="pindot" cx="125" cy="235" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2114" d="m125 235h-10" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+    <text id="text2116" x="110" y="238" fill="#000000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <text id="text2118" x="115" y="234" display="none" fill="#000000" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2120" cx="118" cy="235" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000"/>
+    <path id="path2122" d="m115 232-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+   </g>
+  </g>
+  <polyline id="element-a1" points="125 235 175 235 175 175 265 175 265 205" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <polyline id="element-a2" points="125 245 175 245 175 300 265 300 265 265" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-c0" c_etype="pinpart" c_origin="405,225" c_para="package`TO-220(TO-220-3)`BOM_Supplier`LCSC`BOM_Manufacturer`STMicroelectronics`BOM_Manufacturer Part`L7805ABV`image`//image.lceda.cn/szlcsc/C16807.jpg`BOM_Supplier Part`C16807`spicePre`U`" c_partid="part_import_gge191" c_shapetype="group">
+   <g id="gge193" c_partid="part_annotation">
+    <text id="text2128" x="399.03125" y="197" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">KA78R33</text>
+   </g>
+   <g id="gge195" c_partid="part_annotation">
+    <text id="text2131" x="399.03125" y="188" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">U1</text>
+   </g>
+   <rect id="gge197" x="375" y="200" width="60" height="30" rx="1" ry="1" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+   <g id="gge198" c_etype="pinpart" c_origin="395,228" c_partid="part_annotation" c_shapetype="group">
+    <text id="text2135" x="395" y="228" dominant-baseline=" " fill="#880000" font-family="'Times New Roman'" font-size="10px" font-style=" " font-weight=" " type="comment">GND</text>
+   </g>
+   <g id="gge200" c_elec="4" c_etype="pinpart" c_origin="355,210" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="1">
+    <circle id="circle2138" class="pindot" cx="355" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2140" d="m355 210h20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2142" x="378" y="213" fill="#0000ff" font-family="Verdana" font-size="9.3333px">IN</text>
+    <text id="text2144" x="369" y="209" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2146" cx="372" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2148" d="m375 213 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge207" c_elec="4" c_etype="pinpart" c_origin="405,250" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="2">
+    <circle id="circle2151" class="pindot" cx="405" cy="250" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2153" d="m405 250v-20" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+    <text id="text2155" transform="rotate(-90,408,227)" x="408" y="227" display="none" fill="#000000" font-family="Verdana" font-size="9.3333px">GND</text>
+    <text id="text2157" transform="rotate(-90,404,236)" x="404" y="236" fill="#000000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <circle id="circle2159" cx="405" cy="233" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000"/>
+    <path id="path2161" d="m408 230-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+   </g>
+   <g id="gge214" c_elec="4" c_etype="pinpart" c_origin="455,210" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="3">
+    <circle id="circle2164" class="pindot" cx="455" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2166" d="m455 210h-20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2168" x="432" y="213" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">OUT</text>
+    <text id="text2170" x="441" y="209" fill="#0000ff" font-family="Verdana" font-size="9.3333px">3</text>
+    <circle id="circle2172" cx="438" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2174" d="m435 207-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+  </g>
+  <polyline id="element-b2" points="295 235 295 210 355 210" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <polyline id="element-b1" points="235 235 220 235 220 290 405 290 405 250" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-b3" c_etype="pinpart" c_origin="335,250" c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part``spicePre`C`spiceSymbolName`Cap_RAD-0.1_US`" c_partid="part_import_gge254" c_shapetype="group">
+   <g id="gge256" c_partid="part_annotation">
+    <text id="text2180" x="345" y="262.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">2u</text>
+   </g>
+   <g id="gge258" c_partid="part_annotation">
+    <text id="text2183" x="345" y="253.5" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">C1</text>
+   </g>
+   <polyline id="gge260" points="343 252 327 252" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <g id="gge261" c_elec="0" c_etype="pinpart" c_origin="335,270" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="1">
+    <circle id="circle2187" class="pindot" cx="335" cy="270" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2189" d="m335 260v10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2191" transform="rotate(-90,335,256)" x="335" y="256" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">1</text>
+    <text id="text2193" transform="rotate(-90,331,264)" x="331" y="264" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2195" cx="335" cy="283" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2197" d="m338 280-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge268" points="335 240 335 248" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <polyline id="gge269" points="327 248 343 248" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <g id="gge270" c_elec="0" c_etype="pinpart" c_origin="335,230" c_partid="part_pin" c_rotation="90" c_show="show" c_spicepin="2">
+    <circle id="circle2202" class="pindot" cx="335" cy="230" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2204" d="m335 240v-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2206" transform="rotate(-90,335,244)" x="335" y="244" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <text id="text2208" transform="rotate(-90,331,236)" x="331" y="236" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2210" cx="335" cy="217" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2212" d="m332 220 3 3 3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge277" points="335 252 335 260" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polyline id="element-b6" points="335 230 335 210" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <polyline id="element-b7" points="335 270 335 290" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-d0" c_etype="pinpart" c_origin="570,245" c_para="package`DIP-4`BOM_Supplier`LCSC`BOM_Manufacturer`SHARP`BOM_Manufacturer Part`PC817X2NSZ9F(B)`image`//image.lceda.cn/szlcsc/C60965.jpg`BOM_Supplier Part`C60965`spicePre`U`" c_partid="part_import_gge477" c_shapetype="group">
+   <g id="gge479" c_partid="part_annotation">
+    <text id="text2219" x="564.03125" y="225" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">PC817</text>
+   </g>
+   <g id="gge481" c_partid="part_annotation">
+    <text id="text2222" x="564.03125" y="216" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">U2</text>
+   </g>
+   <rect id="gge483" x="545" y="228" width="50" height="34" rx="2" ry="2" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+   <g id="gge484" c_elec="0" c_etype="pinpart" c_origin="525,235" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="1">
+    <circle id="circle2226" class="pindot" cx="525" cy="235" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2228" d="m525 235h20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2230" x="547" y="238" display="none" fill="#0000ff" font-family="Verdana" font-size="7.3333px">1</text>
+    <text id="text2232" x="540" y="234" fill="#0000ff" font-family="Verdana" font-size="7.3333px" text-anchor="end">1</text>
+    <circle id="circle2234" cx="542" cy="235" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2236" d="m545 238 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge491" c_elec="0" c_etype="pinpart" c_origin="525,255" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="2">
+    <circle id="circle2239" class="pindot" cx="525" cy="255" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2241" d="m525 255h20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2243" x="547" y="258" display="none" fill="#0000ff" font-family="Verdana" font-size="7.3333px">2</text>
+    <text id="text2245" x="540" y="254" fill="#0000ff" font-family="Verdana" font-size="7.3333px" text-anchor="end">2</text>
+    <circle id="circle2247" cx="542" cy="255" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2249" d="m545 258 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge498" c_elec="0" c_etype="pinpart" c_origin="615,255" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="3">
+    <circle id="circle2252" class="pindot" cx="615" cy="255" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2254" d="m615 255h-20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2256" x="593" y="258" display="none" fill="#0000ff" font-family="Verdana" font-size="7.3333px" text-anchor="end">3</text>
+    <text id="text2258" x="600" y="254" fill="#0000ff" font-family="Verdana" font-size="7.3333px">3</text>
+    <circle id="circle2260" cx="598" cy="255" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2262" d="m595 252-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge505" c_elec="0" c_etype="pinpart" c_origin="615,235" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="4">
+    <circle id="circle2265" class="pindot" cx="615" cy="235" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2267" d="m615 235h-20" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2269" x="593" y="238" display="none" fill="#0000ff" font-family="Verdana" font-size="7.3333px" text-anchor="end">4</text>
+    <text id="text2271" x="600" y="234" fill="#0000ff" font-family="Verdana" font-size="7.3333px">4</text>
+    <circle id="circle2273" cx="598" cy="235" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2275" d="m595 232-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge512" points="595 235 585 242"/>
+    <polyline id="gge513" points="585 248 595 255"/>
+    <polyline id="gge514" points="585 236 585 254"/>
+   </g>
+   <g fill="#800" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round">
+    <polygon id="gge515" points="589 254 595 255 592 250" stroke-linecap="round"/>
+    <path id="gge516" d="m573 253-2-4-2 2z"/>
+    <path id="gge517" d="m576 249-2-4-2 2z"/>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge518" points="566 246 573 253"/>
+    <polyline id="gge519" points="569 242 576 249"/>
+    <polyline id="gge520" points="566 250 550 250"/>
+   </g>
+   <path id="gge521" d="m552 240 6 10 7-10z" fill="#800" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   <polyline id="gge522" points="545 235 558 235 558 255 545 255" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="element-c3" c_etype="pinpart" c_origin="485,210" c_para="package`AXIAL-0.3`nameAlias`Value(Ω)`BOM_Manufacturer Part``spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`" c_partid="part_import_gge570" c_shapetype="group">
+   <g id="gge572" c_partid="part_annotation">
+    <text id="text2290" x="479.03125" y="202" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">180</text>
+   </g>
+   <g id="gge574" c_partid="part_annotation">
+    <text id="text2293" x="479.03125" y="193.14062" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">R1</text>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge576" points="500 210 497 215"/>
+    <polyline id="gge577" points="492 205 487 215"/>
+    <polyline id="gge578" points="497 215 492 205"/>
+   </g>
+   <g id="gge579" c_elec="0" c_etype="pinpart" c_origin="505,210" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="2">
+    <circle id="circle2299" class="pindot" cx="505" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2301" d="m505 210h-5" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2303" x="496" y="210" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <text id="text2305" x="504" y="206" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2307" cx="503" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2309" d="m500 207-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge586" points="478 215 473 205"/>
+    <polyline id="gge587" points="487 215 483 205"/>
+    <polyline id="gge588" points="483 205 478 215"/>
+    <polyline id="gge589" points="473 205 470 210"/>
+   </g>
+   <g id="gge593" c_elec="0" c_etype="pinpart" c_origin="465,210" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="1">
+    <circle id="circle2316" class="pindot" cx="465" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2318" d="m465 210h5" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2320" x="474" y="210" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">1</text>
+    <text id="text2322" x="466" y="206" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2324" cx="467" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2326" d="m470 213 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+  </g>
+  <g fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round">
+   <polyline id="element-c2" points="455 210 465 210" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-c4" points="505 210 525 210 525 235" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-c1" points="525 255 525 290 405 290" c_etype="wire" c_shapetype="line"/>
+  </g>
+  <g id="element-d4" c_etype="pinpart" c_origin="660,260" c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part``spicePre`C`spiceSymbolName`Cap_RAD-0.1_US`" c_partid="part_import_gge664" c_shapetype="group">
+   <g id="gge666" c_partid="part_annotation">
+    <text id="text2333" x="670" y="272.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">10u</text>
+   </g>
+   <g id="gge668" c_partid="part_annotation">
+    <text id="text2336" x="670" y="263.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">C2</text>
+   </g>
+   <polyline id="gge670" points="668 262 652 262" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <g id="gge671" c_elec="0" c_etype="pinpart" c_origin="660,280" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="1">
+    <circle id="circle2340" class="pindot" cx="660" cy="280" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2342" d="m660 270v10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2344" transform="rotate(-90,660,266)" x="660" y="266" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">1</text>
+    <text id="text2346" transform="rotate(-90,656,274)" x="656" y="274" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2348" cx="660" cy="293" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2350" d="m663 290-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge678" points="660 250 660 258" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <polyline id="gge679" points="652 258 668 258" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+   <g id="gge680" c_elec="0" c_etype="pinpart" c_origin="660,240" c_partid="part_pin" c_rotation="90" c_show="show" c_spicepin="2">
+    <circle id="circle2355" class="pindot" cx="660" cy="240" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2357" d="m660 250v-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2359" transform="rotate(-90,660,254)" x="660" y="254" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <text id="text2361" transform="rotate(-90,656,246)" x="656" y="246" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2363" cx="660" cy="227" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2365" d="m657 230 3 3 3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge687" points="660 262 660 270" fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="element-d8" c_etype="pinpart" c_origin="660,330" c_para="package`AXIAL-0.3`nameAlias`Value(Ω)`BOM_Manufacturer Part``spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`" c_partid="part_import_gge713" c_rotation="90" c_shapetype="group">
+   <g id="gge715" c_partid="part_annotation">
+    <text id="text2370" x="667" y="342.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">1k</text>
+   </g>
+   <g id="gge717" c_partid="part_annotation">
+    <text id="text2373" x="667" y="333.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">R2</text>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge719" points="660 315 665 318"/>
+    <polyline id="gge720" points="655 323 665 328"/>
+    <polyline id="gge721" points="665 318 655 323"/>
+   </g>
+   <g id="gge722" c_elec="0" c_etype="pinpart" c_origin="660,310" c_partid="part_pin" c_rotation="90" c_show="show" c_spicepin="2">
+    <circle id="circle2379" class="pindot" cx="660" cy="310" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2381" d="m660 310v5" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2383" transform="rotate(-90,660,319)" x="660" y="319" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <text id="text2385" transform="rotate(-90,656,311)" x="656" y="311" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">2</text>
+    <circle id="circle2387" cx="660" cy="312" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2389" d="m657 315 3 3 3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g fill="none" shape-rendering="crispEdges" stroke="#a00000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge729" points="665 337 655 342"/>
+    <polyline id="gge730" points="665 328 655 332"/>
+    <polyline id="gge731" points="655 332 665 337"/>
+    <polyline id="gge732" points="655 342 660 345"/>
+   </g>
+   <g id="gge733" c_elec="0" c_etype="pinpart" c_origin="660,350" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="1">
+    <circle id="circle2396" class="pindot" cx="660" cy="350" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2398" d="m660 350v-5" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2400" transform="rotate(-90,660,341)" x="660" y="341" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">1</text>
+    <text id="text2402" transform="rotate(-90,656,349)" x="656" y="349" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2404" cx="660" cy="348" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2406" d="m663 345-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+  </g>
+  <g id="element-d10" c_etype="pinpart" c_origin="720,330" c_para="package`LED-3MM/2.54`BOM_Supplier`LCSC`BOM_Manufacturer`EVERLIGHT`BOM_Manufacturer Part`204-10SURD/S530-A3`BOM_Supplier Part`C99772`spicePre`L`" c_partid="part_import_gge768" c_rotation="270" c_shapetype="group">
+   <g id="gge770" c_partid="part_annotation">
+    <text id="text2410" x="734" y="342.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">204-10SURD/S530-A3</text>
+   </g>
+   <g id="gge772" c_partid="part_annotation">
+    <text id="text2413" x="734" y="333.25" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">LED1</text>
+   </g>
+   <path id="gge774" d="m728 345-2-4-2 2z" fill="#800" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   <path id="gge775" d="m732 341-2-4-2 2z" fill="#800" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   <g id="gge776" c_elec="0" c_etype="pinpart" c_origin="715,350" c_partid="part_pin" c_rotation="270" c_show="show" c_spicepin="2">
+    <circle id="circle2418" class="pindot" cx="715" cy="350" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2420" d="m715 350v-15" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2422" transform="rotate(-90,715,331)" x="715" y="331" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">K</text>
+    <text id="text2424" transform="rotate(-90,711,339)" x="711" y="339" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <circle id="circle2426" cx="715" cy="338" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2428" d="m718 335-3-3-3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge783" points="721 338 728 345" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round"/>
+   <polyline id="gge784" points="725 334 732 341" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round"/>
+   <g id="gge785" c_elec="0" c_etype="pinpart" c_origin="715,310" c_partid="part_pin" c_rotation="90" c_show="show" c_spicepin="1">
+    <circle id="circle2433" class="pindot" cx="715" cy="310" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2435" d="m715 310v15" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2437" transform="rotate(-90,715,329)" x="715" y="329" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px" text-anchor="end">A</text>
+    <text id="text2439" transform="rotate(-90,711,321)" x="711" y="321" display="none" fill="#880000" font-family="Verdana" font-size="9.3333px">1</text>
+    <circle id="circle2441" cx="715" cy="322" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2443" d="m712 325 3 3 3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <polyline id="gge797" points="723 335 707 335" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linecap="round" stroke-linejoin="round"/>
+   <path id="gge798" d="m709 325 6 10 7-10z" fill="#800" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+  </g>
+  <g id="element-d9" c_etype="pinpart" c_origin="660,355" c_partid="part_netLabel_gnD" c_rotation="0" c_shapetype="group">
+   <circle id="circle2449" class="pindot" cx="660" cy="355" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2451" x="647" y="381" fill="#000000" font-family="'Times New Roman'" font-size="12px">GND</text>
+   <g fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge836" points="660 365 660 355"/>
+    <polyline id="gge837" points="651 365 669 365"/>
+    <polyline id="gge838" points="654 367 666 367"/>
+    <polyline id="gge839" points="657 369 663 369"/>
+    <polyline id="gge840" points="659 371 661 371"/>
+   </g>
+  </g>
+  <polyline id="element-d18" points="660 355 660 350" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-d11" c_etype="pinpart" c_origin="715,355" c_partid="part_netLabel_gnD" c_rotation="0" c_shapetype="group">
+   <circle id="circle2460" class="pindot" cx="715" cy="355" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2462" x="702" y="381" fill="#000000" font-family="'Times New Roman'" font-size="12px">GND</text>
+   <g fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge856" points="715 365 715 355"/>
+    <polyline id="gge857" points="706 365 724 365"/>
+    <polyline id="gge858" points="709 367 721 367"/>
+    <polyline id="gge859" points="712 369 718 369"/>
+    <polyline id="gge860" points="714 371 716 371"/>
+   </g>
+  </g>
+  <g fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round">
+   <polyline id="element-d17" points="715 355 715 350" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-d1" points="615 235 660 235 660 240" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-d2" points="615 255 615 295 660 295 660 280" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-d13" points="660 310 660 295" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-d15" points="715 310 715 295 660 295" c_etype="wire" c_shapetype="line"/>
+  </g>
+  <g id="element-e0" c_etype="pinpart" c_origin="900,230" c_para="package`SOIC-14_150MIL`BOM_Supplier`LCSC`BOM_Supplier Part`C233622`BOM_Manufacturer`ON Semicon`BOM_Manufacturer Part`MC74HCT14ADG`Contributor`LCSC`spicePre`U`" c_partid="part_import_gge1813" c_shapetype="group">
+   <g id="gge1815" c_partid="part_annotation">
+    <text id="text2475" x="894.03125" y="187" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_name">MC74HCT14ADG</text>
+   </g>
+   <g id="gge1817" c_partid="part_annotation">
+    <text id="text2478" x="894.03125" y="178" dominant-baseline="" fill="#000080" font-family="Arial" font-size="9.3333px" font-style="" font-weight="" c_note="note_pre">U3</text>
+   </g>
+   <rect id="gge1819" x="870" y="190" width="60" height="80" rx="2" ry="2" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+   <circle id="gge1820" cx="875" cy="195" r="1.5" fill="#800" shape-rendering="crispEdges" stroke="#800"/>
+   <g id="gge1821" c_elec="0" c_etype="pinpart" c_origin="860,200" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="1">
+    <circle id="circle2483" class="pindot" cx="860" cy="200" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2485" d="m860 200h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2487" x="873.70001" y="204" fill="#0000ff" font-family="Verdana" font-size="9.3333px">A1</text>
+    <text id="text2489" x="869.5" y="199" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">1</text>
+    <circle id="circle2491" cx="867" cy="200" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2493" d="m870 203 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1828" c_elec="0" c_etype="pinpart" c_origin="860,210" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="2">
+    <circle id="circle2496" class="pindot" cx="860" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2498" d="m860 210h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2500" x="873.70001" y="214" fill="#0000ff" font-family="Verdana" font-size="9.3333px">Y1</text>
+    <text id="text2502" x="869.5" y="209" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">2</text>
+    <circle id="circle2504" cx="867" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2506" d="m870 213 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1835" c_elec="0" c_etype="pinpart" c_origin="860,220" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="3">
+    <circle id="circle2509" class="pindot" cx="860" cy="220" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2511" d="m860 220h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2513" x="873.70001" y="224" fill="#0000ff" font-family="Verdana" font-size="9.3333px">A2</text>
+    <text id="text2515" x="869.5" y="219" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">3</text>
+    <circle id="circle2517" cx="867" cy="220" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2519" d="m870 223 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1842" c_elec="0" c_etype="pinpart" c_origin="860,230" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="4">
+    <circle id="circle2522" class="pindot" cx="860" cy="230" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2524" d="m860 230h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2526" x="873.70001" y="234" fill="#0000ff" font-family="Verdana" font-size="9.3333px">Y2</text>
+    <text id="text2528" x="869.5" y="229" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">4</text>
+    <circle id="circle2530" cx="867" cy="230" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2532" d="m870 233 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1849" c_elec="0" c_etype="pinpart" c_origin="860,240" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="5">
+    <circle id="circle2535" class="pindot" cx="860" cy="240" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2537" d="m860 240h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2539" x="873.70001" y="244" fill="#0000ff" font-family="Verdana" font-size="9.3333px">A3</text>
+    <text id="text2541" x="869.5" y="239" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">5</text>
+    <circle id="circle2543" cx="867" cy="240" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2545" d="m870 243 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1856" c_elec="0" c_etype="pinpart" c_origin="860,250" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="6">
+    <circle id="circle2548" class="pindot" cx="860" cy="250" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2550" d="m860 250h10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2552" x="873.70001" y="254" fill="#0000ff" font-family="Verdana" font-size="9.3333px">Y3</text>
+    <text id="text2554" x="869.5" y="249" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">6</text>
+    <circle id="circle2556" cx="867" cy="250" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2558" d="m870 253 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1863" c_elec="0" c_etype="pinpart" c_origin="860,260" c_partid="part_pin" c_rotation="180" c_show="show" c_spicepin="7">
+    <circle id="circle2561" class="pindot" cx="860" cy="260" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2563" d="m860 260h10" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+    <text id="text2565" x="873.70001" y="264" fill="#000000" font-family="Verdana" font-size="9.3333px">GND</text>
+    <text id="text2567" x="869.5" y="259" fill="#000000" font-family="Verdana" font-size="9.3333px" text-anchor="end">7</text>
+    <circle id="circle2569" cx="867" cy="260" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000"/>
+    <path id="path2571" d="m870 263 3-3-3-3" display="none" fill="none" shape-rendering="crispEdges" stroke="#000" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1870" c_elec="0" c_etype="pinpart" c_origin="940,260" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="8">
+    <circle id="circle2574" class="pindot" cx="940" cy="260" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2576" d="m940 260h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2578" x="926.29999" y="264" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">Y4</text>
+    <text id="text2580" x="930.5" y="259" fill="#0000ff" font-family="Verdana" font-size="9.3333px">8</text>
+    <circle id="circle2582" cx="933" cy="260" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2584" d="m930 257-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1877" c_elec="0" c_etype="pinpart" c_origin="940,250" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="9">
+    <circle id="circle2587" class="pindot" cx="940" cy="250" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2589" d="m940 250h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2591" x="926.29999" y="254" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">A4</text>
+    <text id="text2593" x="930.5" y="249" fill="#0000ff" font-family="Verdana" font-size="9.3333px">9</text>
+    <circle id="circle2595" cx="933" cy="250" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2597" d="m930 247-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1884" c_elec="0" c_etype="pinpart" c_origin="940,240" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="10">
+    <circle id="circle2600" class="pindot" cx="940" cy="240" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2602" d="m940 240h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2604" x="926.29999" y="244" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">Y5</text>
+    <text id="text2606" x="930.5" y="239" fill="#0000ff" font-family="Verdana" font-size="9.3333px">10</text>
+    <circle id="circle2608" cx="933" cy="240" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2610" d="m930 237-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1891" c_elec="0" c_etype="pinpart" c_origin="940,230" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="11">
+    <circle id="circle2613" class="pindot" cx="940" cy="230" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2615" d="m940 230h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2617" x="926.29999" y="234" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">A5</text>
+    <text id="text2619" x="930.5" y="229" fill="#0000ff" font-family="Verdana" font-size="9.3333px">11</text>
+    <circle id="circle2621" cx="933" cy="230" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2623" d="m930 227-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1898" c_elec="0" c_etype="pinpart" c_origin="940,220" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="12">
+    <circle id="circle2626" class="pindot" cx="940" cy="220" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2628" d="m940 220h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2630" x="926.29999" y="224" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">Y6</text>
+    <text id="text2632" x="930.5" y="219" fill="#0000ff" font-family="Verdana" font-size="9.3333px">12</text>
+    <circle id="circle2634" cx="933" cy="220" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2636" d="m930 217-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1905" c_elec="0" c_etype="pinpart" c_origin="940,210" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="13">
+    <circle id="circle2639" class="pindot" cx="940" cy="210" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2641" d="m940 210h-10" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+    <text id="text2643" x="926.29999" y="214" fill="#0000ff" font-family="Verdana" font-size="9.3333px" text-anchor="end">A6</text>
+    <text id="text2645" x="930.5" y="209" fill="#0000ff" font-family="Verdana" font-size="9.3333px">13</text>
+    <circle id="circle2647" cx="933" cy="210" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800"/>
+    <path id="path2649" d="m930 207-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#800" stroke-linejoin="round"/>
+   </g>
+   <g id="gge1912" c_elec="0" c_etype="pinpart" c_origin="940,200" c_partid="part_pin" c_rotation="0" c_show="show" c_spicepin="14">
+    <circle id="circle2652" class="pindot" cx="940" cy="200" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+    <path id="path2654" d="m940 200h-10" fill="none" shape-rendering="crispEdges" stroke="#f00" stroke-linejoin="round"/>
+    <text id="text2656" x="926.29999" y="204" fill="#ff0000" font-family="Verdana" font-size="9.3333px" text-anchor="end">VCC</text>
+    <text id="text2658" x="930.5" y="199" fill="#ff0000" font-family="Verdana" font-size="9.3333px">14</text>
+    <circle id="circle2660" cx="933" cy="200" r="3" display="none" fill="none" shape-rendering="crispEdges" stroke="#f00"/>
+    <path id="path2662" d="m930 197-3 3 3 3" display="none" fill="none" shape-rendering="crispEdges" stroke="#f00" stroke-linejoin="round"/>
+   </g>
+  </g>
+  <g id="element-d6" c_etype="pinpart" c_origin="660,175" c_partid="part_netLabel_VCC" c_rotation="0" c_shapetype="group">
+   <circle id="circle2666" class="pindot" cx="660" cy="175" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2668" x="648" y="163" fill="#000000" font-family="'Times New Roman'" font-size="12px">VCC</text>
+   <polyline id="gge2030" points="660 165 660 175" fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+   <polyline id="gge2031" points="655 165 665 165" fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polyline id="element-d5" points="660 175 660 235" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-e14" c_etype="pinpart" c_origin="845,355" c_partid="part_netLabel_gnD" c_rotation="0" c_shapetype="group">
+   <circle id="circle2674" class="pindot" cx="845" cy="355" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2676" x="832" y="381" fill="#000000" font-family="'Times New Roman'" font-size="12px">GND</text>
+   <g fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="gge2049" points="845 365 845 355"/>
+    <polyline id="gge2050" points="836 365 854 365"/>
+    <polyline id="gge2051" points="839 367 851 367"/>
+    <polyline id="gge2052" points="842 369 848 369"/>
+    <polyline id="gge2053" points="844 371 846 371"/>
+   </g>
+  </g>
+  <g fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round">
+   <polyline id="element-e5" points="845 355 845 260 860 260" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-e3" points="860 240 845 240 845 260" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-e2" points="860 220 845 220 845 240" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-e1" points="860 200 845 200 845 220" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-d12" points="940 210 1e3 210 1e3 295 715 295" c_etype="wire" c_shapetype="line"/>
+   <polyline id="element-e12" points="940 220 965 220 965 230 940 230" c_etype="wire" c_shapetype="line"/>
+  </g>
+  <g id="element-e17" c_etype="pinpart" c_origin="990,170" c_partid="part_netLabel_VCC" c_rotation="0" c_shapetype="group">
+   <circle id="circle2749" class="pindot" cx="990" cy="170" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2751" x="978" y="158" fill="#000000" font-family="'Times New Roman'" font-size="12px">VCC</text>
+   <polyline id="gge4060" points="990 160 990 170" fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+   <polyline id="gge4061" points="985 160 995 160" fill="transparent" shape-rendering="crispEdges" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polyline id="element-e18" points="990 170 990 200 940 200" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <polyline id="element-e6" points="940 250 965 250 965 280 845 280" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-e19" c_etype="pinpart" c_origin="1030,240" c_partid="part_netLabel_netPort" c_rotation="180" c_shapetype="group">
+   <circle id="circle2880" class="pindot" cx="1030" cy="240" r="2" fill="none" shape-rendering="crispEdges" c_pindot="true"/>
+   <text id="text2882" x="1051.5" y="242.00999" fill="#0000ff" font-family="'Times New Roman'" font-size="10.667px">SIG</text>
+   <polyline id="gge4792" points="1030 240 1035 235 1050 235 1050 245 1035 245 1030 240" fill="transparent" shape-rendering="crispEdges" stroke="#00f" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polyline id="element-e15" points="940 240 1030 240" fill="none" shape-rendering="crispEdges" stroke="#080" stroke-linecap="round" stroke-linejoin="round" c_etype="wire" c_shapetype="line"/>
+  <g id="element-e7" shape-rendering="crispEdges" c_etype="pinpart" c_origin="845,280" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2927" class="pindot" cx="845" cy="280" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2929" cx="845" cy="280" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-d16" shape-rendering="crispEdges" c_etype="pinpart" c_origin="715,295" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2932" class="pindot" cx="715" cy="295" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2934" cx="715" cy="295" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-e10" shape-rendering="crispEdges" c_etype="pinpart" c_origin="845,220" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2937" class="pindot" cx="845" cy="220" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2939" cx="845" cy="220" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-e8" shape-rendering="crispEdges" c_etype="pinpart" c_origin="845,260" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2942" class="pindot" cx="845" cy="260" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2944" cx="845" cy="260" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-d19" shape-rendering="crispEdges" c_etype="pinpart" c_origin="660,235" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2947" class="pindot" cx="660" cy="235" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2949" cx="660" cy="235" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-b5" shape-rendering="crispEdges" c_etype="pinpart" c_origin="335,210" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2952" class="pindot" cx="335" cy="210" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2954" cx="335" cy="210" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-b4" shape-rendering="crispEdges" c_etype="pinpart" c_origin="335,290" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2957" class="pindot" cx="335" cy="290" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2959" cx="335" cy="290" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-c5" shape-rendering="crispEdges" c_etype="pinpart" c_origin="405,290" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2962" class="pindot" cx="405" cy="290" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2964" cx="405" cy="290" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-d7" shape-rendering="crispEdges" c_etype="pinpart" c_origin="660,295" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2967" class="pindot" cx="660" cy="295" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2969" cx="660" cy="295" r="2.5" fill="#c00"/>
+  </g>
+  <g id="element-e9" shape-rendering="crispEdges" c_etype="pinpart" c_origin="845,240" c_partid="part_junction" c_shapetype="group">
+   <circle id="circle2972" class="pindot" cx="845" cy="240" r="2" fill="none" c_pindot="true"/>
+   <circle id="circle2974" cx="845" cy="240" r="2.5" fill="#c00"/>
+  </g>
+ </g>
+</svg>

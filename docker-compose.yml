@@ -1,0 +1,78 @@
+version: "3.7"
+services:
+  proxy:
+    image: wallbox_proxy
+    build:
+      network: host
+      context: .
+      dockerfile: docker/proxy/Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - innernet
+  mpd:
+    image: wallbox_mpd
+    build:
+      network: host
+      context: .
+      dockerfile: docker/mpd/Dockerfile
+    ports:
+      - "6600:6600"
+    expose:
+      - "6600"
+    devices:
+      - /dev/snd
+    volumes:
+      #- "/home/samuel/Music:/var/lib/mpd/music"
+      - "/mnt/c/TorrentFiles/music/:/var/lib/mpd/music"
+    networks:
+      - innernet
+#  grpc-server:
+#    image: wallbox_grpc-server
+#    build:
+#      network: host
+#      context: .
+#      dockerfile: docker/grpc-server/Dockerfile
+#    ports:
+#      - "50051:50051"
+#    expose:
+#      - "50051"
+#    environment:
+#      - MPD_HOST=mpd
+#      - MPD_PORT=6600
+#    depends_on:
+#      - mpd
+#    networks:
+#      innernet:
+#        aliases:
+#          - server
+#  client:
+#    image: wallbox_client
+#    build:
+#      network: host
+#      context: .
+#      dockerfile: docker/mpd-client/Dockerfile
+#    depends_on:
+#      - mpd
+#    environment:
+#      - MPD_HOST=mpd
+#    networks:
+#      - innernet
+#  angular-client:
+#    image: wallbox_angular-client
+#    build:
+#      network: host
+#      context: .
+#      dockerfile: docker/angular-client/Dockerfile
+#    networks:
+#      innernet:
+#        aliases:
+#          - client
+#    ports:
+#      - "4200:4200"
+#    expose:
+#      - "4200"
+networks:
+  innernet: {}
