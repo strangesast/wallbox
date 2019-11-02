@@ -1,1 +1,6 @@
-/env/
+env
+__pycache__
+wallbox_pb2_grpc.py
+wallbox_pb2.py
+wallbox_grpc.py
+node_modules/
