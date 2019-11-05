@@ -5,3 +5,4 @@ wallbox_pb.js
 WallboxServiceClientPb.ts
 wallbox_grpc.py
 wallbox_pb2.py
+protoc/

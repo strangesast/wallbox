@@ -30,7 +30,6 @@ static_resources:
                   prefix: "/"
                 route:
                   cluster: client
-                  use_websocket: true
               cors:
                 allow_origin:
                 - "*"
