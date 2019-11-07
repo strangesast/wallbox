@@ -25,8 +25,7 @@ services:
     devices:
       - /dev/snd
     volumes:
-      #- "/home/samuel/Music:/var/lib/mpd/music"
-      - "/mnt/c/TorrentFiles/music/:/var/lib/mpd/music"
+      - "${MPD_MUSIC_DIR:-music}:/var/lib/mpd/music"
     networks:
       - innernet
 #  grpc-server:
