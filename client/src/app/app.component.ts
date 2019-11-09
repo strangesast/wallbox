@@ -4,6 +4,8 @@ import { Empty, StatusResult } from 'wallbox-proto/wallbox_pb';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { StatusService } from './status.service';
+
 @Component({
   selector: 'app-root',
   template: `
@@ -20,6 +22,7 @@ import { map } from 'rxjs/operators';
       </nav>
     </header>
     <router-outlet></router-outlet>
+    <pre>{{updates$ | async | json}}</pre>
   </div>
   <app-control-bar></app-control-bar>
   `,
@@ -60,7 +63,12 @@ import { map } from 'rxjs/operators';
   // styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public router: Router) {}
+  updates$ = this.status.state();
+
+  constructor(public router: Router, public status: StatusService) {
+    console.log(this.updates$);
+  }
+
 
   onSearch($event) {
     this.router.navigate(['/search'], { queryParams: { q: $event } });

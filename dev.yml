@@ -17,4 +17,4 @@ services:
     devices:
       - /dev/snd
     volumes:
-      - "${MPD_MUSIC_DIR:-music}:/var/lib/mpd/music"
+      - "${MPD_MUSIC_DIR:-./music}:/var/lib/mpd/music"

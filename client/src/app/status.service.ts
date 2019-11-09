@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from './base.service';
-import { QueueSong } from 'wallbox-proto/wallbox_grpc_web_pb';
+import { QueueSong, Empty, StatusResult } from 'wallbox-proto/wallbox_grpc_web_pb';
+import { map } from 'rxjs/operators';
 
-import { wrapUnaryUnary } from './utils';
+import { wrapUnaryStream, wrapUnaryUnary } from './utils';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StatusService {
+  state() {
+    return this._state().pipe(
+      map((v: StatusResult) => v.toObject())
+    );
+  }
+  _state() {
+    const arg = new Empty();
+    return wrapUnaryStream((this.base as any).state.bind(this.base), arg);
+  }
   play(pos = 0) {
     const arg = new QueueSong();
     arg.setPos(pos);
