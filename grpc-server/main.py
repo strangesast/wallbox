@@ -33,6 +33,7 @@ def parse_status(status):
     status['elapsed'] = float(status.pop('elapsed', '0'))
     status['bitrate'] = int(status.pop('bitrate', '0'))
     status['duration'] = float(status.pop('duration', '0'))
+    status.pop('composer', None)
 
 
 async def check_state(newstate):
@@ -132,6 +133,8 @@ class WallboxApi(WallboxApiBase):
             record['uri'] = record.pop('file')
             record['time'] = int(record.pop('time'))
             record['duration'] = float(record.pop('duration'))
+            record.pop('composer', None)
+            record.pop('disc', None)
             record['date'] = str(record.pop('date', ''))
             record['lastModified'] = timestamp_from_str(record.pop('last-modified', None))
             record['pos'] = int(record.pop('pos'))
