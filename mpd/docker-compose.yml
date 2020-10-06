@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  mpd:
+    image: strangesast/wallbox_mpd
+    build:
+      context: .
+      dockerfile: test.Dockerfile
+    ports:
+      - 6600:6600
+    devices:
+      - /dev/snd
+    volumes:
+      - ./music:/mpd/music
+      - /dev/snd:/dev/snd

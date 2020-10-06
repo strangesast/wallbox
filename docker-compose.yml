@@ -73,5 +73,7 @@ services:
 #      - "4200:4200"
 #    expose:
 #      - "4200"
+volumes:
+  music:
 networks:
   innernet: {}
